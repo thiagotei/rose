@@ -2024,7 +2024,7 @@ trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variabl
   // DQ (4/29/2008): Added support for detecting SgClassSymbol IR nodes (fro drived types).
 
      if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
-          printf ("In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = %s currentScope = %p = %s \n",variableName.str(),currentScope,currentScope->class_name().c_str());
+          printf ("*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = %s currentScope = %p = %s \n",variableName.str(),currentScope,currentScope->class_name().c_str());
 
 #if 0
   // Output debugging information about saved state (stack) information.
@@ -2060,21 +2060,21 @@ trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variabl
   // while (variableSymbol == NULL && tempScope != NULL)
      while (variableSymbol == NULL && functionSymbol == NULL && classSymbol == NULL && tempScope != NULL)
         {
-#if 0
-          printf ("Searching in scope = %p = %s \n",tempScope,tempScope->class_name().c_str());
-          tempScope->get_startOfConstruct()->display("Searching in scope");
+#if 1
+          printf ("*** Searching in scope = %p = %s \n",tempScope,tempScope->class_name().c_str());
+          //tempScope->get_startOfConstruct()->display("Searching in scope");
 #endif
+#if 1
+          tempScope->print_symboltable("In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()");
+#endif
+
        // DQ (11/26/2010): The variable name that we will search for needs to be case normalized (see test2010_112.f90).
           variableSymbol = tempScope->lookup_variable_symbol(variableName);
           functionSymbol = tempScope->lookup_function_symbol(variableName);
           classSymbol    = tempScope->lookup_class_symbol(variableName);
-#if 0
-          printf ("In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): tempScope = %p = %s variableSymbol = %p functionSymbol = %p classSymbol = %p \n",
+#if 1
+          printf ("*** tempScope = %p = %s variableSymbol = %p functionSymbol = %p classSymbol = %p \n",
                tempScope,tempScope->class_name().c_str(),variableSymbol,functionSymbol,classSymbol);
-#endif
-
-#if 0
-          tempScope->print_symboltable("In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()");
 #endif
 
        // If we have processed the global scope then we can stop (if we have not found the symbol at this
@@ -2088,10 +2088,12 @@ trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variabl
      outputState("At BOTTOM of trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()");
 #endif
 
-#if 0
+#if 1
   // This function could have returned a NULL pointer if there was no symbol found ???
      if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
-          printf ("Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = %p functionSymbol = %p \n",variableSymbol,functionSymbol);
+          printf ("*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = %p functionSymbol = %p \n",variableSymbol,functionSymbol);
+
+     fflush(stdout);
 #endif
    }
 
@@ -2269,6 +2271,10 @@ trace_back_through_parent_scopes_lookup_variable_symbol(const SgName & variableN
 // DXN (08/15/2011)
 // Refactored code to find the scope of a given SgClassType;
 void findClassTypeStructureScope (SgClassType* classType, SgScopeStatement*& structureScope) {
+    if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
+    {
+        printf("[findClass] type %s scope %p scope name %s.\n",classType->class_name().c_str(), structureScope, structureScope->get_qualified_name().str());
+    }
     SgClassDeclaration* classDeclaration = isSgClassDeclaration(classType->get_declaration());
     ROSE_ASSERT(classDeclaration != NULL);
     SgClassDeclaration* definingClassDeclaration = isSgClassDeclaration(classDeclaration->get_definingDeclaration());
@@ -2276,6 +2282,8 @@ void findClassTypeStructureScope (SgClassType* classType, SgScopeStatement*& str
     SgClassDefinition* classDefinition = definingClassDeclaration->get_definition();
     ROSE_ASSERT(classDefinition != NULL);
     structureScope = classDefinition;
+    printf("[findClass] Leaving type %s scope %p scope name %s.\n",classType->class_name().c_str(), structureScope, structureScope->get_qualified_name().str() );
+    fflush(stdout);
 }
 
 // DXN (08/15/2011)
@@ -2283,6 +2291,11 @@ void findClassTypeStructureScope (SgClassType* classType, SgScopeStatement*& str
 // Called by trace_back_through_parent_scopes_lookup_member_variable_symbol.
 void findStructureScope (SgType* type, SgScopeStatement*& structureScope)
 {
+    if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
+    {
+        printf("[findStructureScope] type %s scope %p scope name %s .\n",type->class_name().c_str(), structureScope, structureScope->get_qualified_name().str());
+        fflush(stdout);
+    }
     switch (type->variantT())
     {
     // This type will continue the search for multi-type references.
@@ -2331,7 +2344,256 @@ void findStructureScope (SgType* type, SgScopeStatement*& structureScope)
             structureScope = NULL;
           }
     }
+    if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
+    {
+        if(structureScope) {
+                printf("[findStructureScope] Leaving scope %p scope name %s .\n", structureScope, structureScope->get_qualified_name().str());
+        } else {
+                printf("[findStructureScope] Leaving.\n");
+        }
+    }
 }
+
+std::vector<SgSymbol*>
+trace_back_through_UIUC
+(const std::vector<MultipartReferenceType> & qualifiedNameList, SgScopeStatement* currentScope )
+{
+  // This function takes an array of names representing multi-part references generated from repeated calls to R613.
+  // This function permits structured data member lookup to be uniform with simple variable lookup.
+  // The non-recursive implementation that this allows for R612 makes it easer to debug this code.
+
+     SgVariableSymbol* variableSymbol = NULL;
+     SgFunctionSymbol* functionSymbol = NULL;
+     SgClassSymbol*    classSymbol    = NULL;
+
+  // std::vector<SgVariableSymbol*> returnSymbolList;
+     std::vector<SgSymbol*> returnSymbolList;
+
+#if 0
+  // Output debugging information about saved state (stack) information.
+     outputState("At TOP of trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector<std::string>,SgScopeStatement*)");
+#endif
+
+#if 1
+     printf ("[trace_back_UIUC] qualifiedNameList name = %s \n",generateQualifiedName(qualifiedNameList).c_str());
+#endif
+
+        {
+       // This is the more sophisticated case (multi-part references)...
+       // We actually want to call the version of the function that will not create a new implicit variable.
+          SgScopeStatement* structureScope = currentScope;
+          ROSE_ASSERT(structureScope != NULL);
+
+          string name;
+       // size_t i = 0;
+       // while (i < qualifiedNameList.size())
+          for (size_t i = 0; i < qualifiedNameList.size(); i++)
+             {
+            // name = qualifiedNameList[i];
+               name = qualifiedNameList[i].name;
+
+               ROSE_ASSERT(structureScope != NULL);
+#if 1
+               printf ("[trace_back_UIUC] i = %ld structureScope = %p = %s name = %s \n",i,structureScope,structureScope->class_name().c_str(),name.c_str());
+#endif
+#if 0
+               printf ("[trace_back_UIUC] Output the symbol table at the structureScope (debugging i = %" PRIuPTR "): \n",i);
+               structureScope->get_symbol_table()->print("[trace_back_UIUC] Output the symbol table at the current scope");
+#endif
+
+            // variableSymbol = trace_back_through_parent_scopes_lookup_variable_symbol(qualifiedNameList[i],structureScope);
+            // trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(qualifiedNameList[i],structureScope,variableSymbol,functionSymbol,classSymbol);
+               trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(name,structureScope,variableSymbol,functionSymbol,classSymbol);
+
+               ROSE_ASSERT(structureScope != NULL);
+
+#if 1
+               printf ("[trace_back_UIUC] variableSymbol = %p \n",variableSymbol);
+               printf ("[trace_back_UIUC] functionSymbol = %p \n",functionSymbol);
+               printf ("[trace_back_UIUC] classSymbol    = %p \n",classSymbol);
+#endif
+
+               if (variableSymbol != NULL)
+                  {
+                 // ROSE_ASSERT(variableSymbol->get_type() != NULL);
+#if 0
+                    printf ("variable type = %s \n",variableSymbol->get_type()->class_name().c_str());
+#endif
+                 // This is a reference to a variable (perhaps a structure), and we can return variableSymbol as NULL.
+                 // name = qualifiedNameList[i];
+#if 0
+                    printf ("Found a variableSymbol = %p Next variable name = %s \n",variableSymbol,name.c_str());
+#endif
+                    SgType* type = variableSymbol->get_type();
+                    ROSE_ASSERT(type != NULL);
+#if 0
+                    printf ("associated variable type = %s \n",type->class_name().c_str());
+#endif
+                    findStructureScope(type, structureScope);  // DXN (08/12/2011)
+
+                 // Returning an empty list (returnSymbolList) is how we would return the equivalant of "variableSymbol == NULL".
+                    if (variableSymbol != NULL)
+                       {
+                         returnSymbolList.push_back(variableSymbol);
+                       }
+                  }
+                 else
+                  {
+#if 0
+                    printf ("In trace_back_through_parent_scopes_lookup_member_variable_symbol(): functionSymbol = %p \n",functionSymbol);
+#endif
+                    if (functionSymbol != NULL)
+                       {
+                      // This is a reference to a function (maybe a member function of a module?), and we can return variableSymbol as NULL.
+                      // See test2010_176.f90 for an example of this (setting a data member of the return value of a function returning a type!
+                      // name = qualifiedNameList[i];
+#if 0
+                         printf ("Found a functionSymbol = %p Next variable name = %s \n",functionSymbol,name.c_str());
+#endif
+                         SgType* type = functionSymbol->get_type();
+                         ROSE_ASSERT(type != NULL);
+                         SgFunctionType* functionType = isSgFunctionType(type);
+                         ROSE_ASSERT(functionType != NULL);
+                         SgType* functionReturnType = functionType->get_return_type();
+                         ROSE_ASSERT(functionReturnType != NULL);
+#if 0
+                         printf ("functionReturnType = %p = %s \n",functionReturnType,functionReturnType->class_name().c_str());
+#endif
+                         SgClassType* classType = isSgClassType(functionReturnType);
+                         if (classType != NULL)
+                            {
+                           // printf ("Found a function with SgClassType return type! \n");
+                             findClassTypeStructureScope(classType, structureScope);
+                           // printf ("Set structureScope to %p \n",structureScope);
+
+                              returnSymbolList.push_back(functionSymbol);
+                            }
+                           else
+                            {
+                              structureScope = NULL;
+
+                           // See test2007_07.f90 for where this is required.
+                              returnSymbolList.push_back(functionSymbol);
+                            }
+                       }
+                      else
+                       {
+#if 0
+                         printf ("In trace_back_through_parent_scopes_lookup_member_variable_symbol(): classSymbol = %p \n",classSymbol);
+#endif
+                         if (classSymbol != NULL)
+                            {
+                           // This is a reference to a type, and we can return variableSymbol as NULL.
+                           // printf ("Found a classSymbol = %p \n",classSymbol);
+                              structureScope = NULL;
+                            }
+                           else
+                            {
+#if 0
+                               printf ("########## This is reference has not been seen previously: name = %s qualifiedNameList.size() = %" PRIuPTR " \n",name.c_str(),qualifiedNameList.size());
+#endif
+                           // Nothing was found, so we can return variableSymbol as NULL.
+                           // Note: types could be buried (modules defined in modules), but they are not likely a part of multi-part references (in Fortran).
+                              structureScope = NULL;
+
+                           // DQ (12/28/2010): Added handling for implicit references.
+                           // If nothing was found then this is an implicit reference (could be a variable or array reference, I think).
+                           // But to be an implicit reference it must have only one part (qualifiedNameList.size() == 1).
+                              if (qualifiedNameList.size() == 1)
+                                 {
+                                // DQ (1/18/2011): This detects where we have used the semantics of implicitly building symbols for implicit variables.
+                                // printf ("WARNING: This use of trace_back_through_parent_scopes_lookup_variable_symbol() used the side effect of building a symbol if the reference is not found! \n");
+                                // ROSE_ASSERT(false);
+
+                                // This will build the variable symbol if the variable is not found.
+                                // variableSymbol = trace_back_through_parent_scopes_lookup_variable_symbol(qualifiedNameList[0],currentScope);
+                                   variableSymbol = trace_back_through_parent_scopes_lookup_variable_symbol(name,currentScope);
+
+                                // Returning an empty list (returnSymbolList) is how we would return the equivalant of "variableSymbol == NULL".
+                                   if (variableSymbol != NULL)
+                                      {
+                                        returnSymbolList.push_back(variableSymbol);
+                                      }
+                                     else
+                                      {
+                                     // I think this may be an error...output a message for now.
+#if 0
+                                        printf ("Warning: variable symbol not built for expected implicit reference = %s \n",name.c_str());
+#endif
+#if 0
+                                     // Returning a SgDefaultSymbol will be used to indicate that the name is not known and can be interpreted later.
+                                        SgSymbol* defaultSymbol = new SgDefaultSymbol();
+                                        returnSymbolList.push_back(defaultSymbol);
+#endif
+                                      }
+                                 }
+                            }
+                       }
+                  }
+
+                 printf("[trace_back_UIUC] scope %p iter %ld var %p\n",structureScope, i, variableSymbol);
+            // Error checking...
+               if (structureScope == NULL)
+                  {
+                 // This should be the last iteration!
+                    if (i != (qualifiedNameList.size() - 1))
+                       {
+                         printf ("[trace_back_UIUC] WARNING: i != (qualifiedNameList.size() - 1) for LANL_POP code only! (i = %" PRIuPTR " qualifiedNameList.size() = %" PRIuPTR ") \n",i,qualifiedNameList.size());
+
+                      // Debugging...
+                         printf ("[trace_back_UIUC] Leaving trace_back_through_parent_scopes_lookup_member_variable_symbol(): \n");
+                         for (size_t i = 0; i < returnSymbolList.size(); i++)
+                            {
+                               printf ("--- returnSymbolList[%" PRIuPTR "] = %p = %s = %s \n",i,returnSymbolList[i],returnSymbolList[i]->class_name().c_str(),returnSymbolList[i]->get_name().str());
+                            }
+                       }
+
+                 // Note that if this fails is it always because there was some case missed above (and so the structureScope was not set properly to permit the search to be continued resolve a name in a nested type or scope).
+                    ROSE_ASSERT(i == (qualifiedNameList.size() - 1));
+                  }
+
+            // End of "for loop" over multi-part name parts.
+             }
+        }
+
+#if 0
+  // Output debugging information about saved state (stack) information.
+     outputState("At BOTTOM of trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector<std::string>,SgScopeStatement*)");
+#endif
+
+#if 0
+  // This function could have returned a NULL pointer if there was no symbol found ???
+     if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+        {
+          printf ("Leaving trace_back_through_parent_scopes_lookup_member_variable_symbol(): \n");
+          for (size_t i = 0; i < returnSymbolList.size(); i++)
+             {
+               printf ("--- returnSymbolList[%" PRIuPTR "] = %p = %s \n",i,returnSymbolList[i],returnSymbolList[i]->class_name().c_str());
+             }
+        }
+#endif
+
+#if 0
+  // DQ (1/19/2011): I think this is valid debugging code.
+     if (returnSymbolList.empty() == true)
+        {
+          printf ("*** WARNING: returnSymbolList is empty (might be an error) *** \n");
+        }
+#endif
+
+  // DQ (12/28/2010): Fixed this test to handle case of single part implicit references.
+  // DQ (12/27/2010): Can we assert this?  Maybe not for implicitly declared variables (which are by definition only a single part, not multi-part).
+  // if (returnSymbolList.size() != qualifiedNameList.size())
+     if (qualifiedNameList.size() > 1 && returnSymbolList.size() != qualifiedNameList.size())
+        {
+          printf ("Error: returnSymbolList.size() = %" PRIuPTR " qualifiedNameList.size() = %" PRIuPTR " \n",returnSymbolList.size(),qualifiedNameList.size());
+        }
+  // ROSE_ASSERT(returnSymbolList.size() == qualifiedNameList.size());
+     ROSE_ASSERT(qualifiedNameList.size() == 1 || returnSymbolList.size() == qualifiedNameList.size());
+
+     return returnSymbolList;
+   }
+
 // DQ (12/27/2010): We have to maek the return type std::vector<SgSymbol*> so that we have
 // include SgFunctionSymbols to handle function return value initialization for defined types.
 // DQ (12/14/2010): New support for structure members.
@@ -2356,8 +2618,8 @@ trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector
      outputState("At TOP of trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector<std::string>,SgScopeStatement*)");
 #endif
 
-#if 0
-     printf ("qualifiedNameList name = %s \n",generateQualifiedName(qualifiedNameList).c_str());
+#if 1
+     printf ("[trace_back:2328] qualifiedNameList name = %s \n",generateQualifiedName(qualifiedNameList).c_str());
 #endif
 
         {
@@ -2375,12 +2637,12 @@ trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector
                name = qualifiedNameList[i].name;
 
                ROSE_ASSERT(structureScope != NULL);
-#if 0
-               printf ("structureScope = %p = %s name = %s \n",structureScope,structureScope->class_name().c_str(),name.c_str());
+#if 1
+               printf ("[trace_back:2328] structureScope = %p = %s name = %s \n",structureScope,structureScope->class_name().c_str(),name.c_str());
 #endif
-#if 0
-               printf ("Output the symbol table at the structureScope (debugging i = %" PRIuPTR "): \n",i);
-               structureScope->get_symbol_table()->print("Output the symbol table at the current scope");
+#if 1
+               printf ("[trace_back:2328] Output the symbol table at the structureScope (debugging i = %" PRIuPTR "): \n",i);
+               structureScope->get_symbol_table()->print("[trace_back:2328] Output the symbol table at the current scope");
 #endif
 
             // variableSymbol = trace_back_through_parent_scopes_lookup_variable_symbol(qualifiedNameList[i],structureScope);
@@ -2513,16 +2775,17 @@ trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector
                        }
                   }
 
+                 printf("[trace_back:2328] scope %p iter %ld var %p\n",structureScope, i, variableSymbol);
             // Error checking...
                if (structureScope == NULL)
                   {
                  // This should be the last iteration!
                     if (i != (qualifiedNameList.size() - 1))
                        {
-                         printf ("WARNING: i != (qualifiedNameList.size() - 1) for LANL_POP code only! (i = %" PRIuPTR " qualifiedNameList.size() = %" PRIuPTR ") \n",i,qualifiedNameList.size());
+                         printf ("[trace_back:2328] WARNING: i != (qualifiedNameList.size() - 1) for LANL_POP code only! (i = %" PRIuPTR " qualifiedNameList.size() = %" PRIuPTR ") \n",i,qualifiedNameList.size());
 
                       // Debugging...
-                         printf ("Leaving trace_back_through_parent_scopes_lookup_member_variable_symbol(): \n");
+                         printf ("[trace_back:2328] Leaving trace_back_through_parent_scopes_lookup_member_variable_symbol(): \n");
                          for (size_t i = 0; i < returnSymbolList.size(); i++)
                             {
                                printf ("--- returnSymbolList[%" PRIuPTR "] = %p = %s = %s \n",i,returnSymbolList[i],returnSymbolList[i]->class_name().c_str(),returnSymbolList[i]->get_name().str());

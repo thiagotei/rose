@@ -258,6 +258,8 @@ SgVariableSymbol* trace_back_through_parent_scopes_lookup_variable_symbol(const 
 // std::vector<SgVariableSymbol*> trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector<std::string> & qualifiedNameList, SgScopeStatement* currentScope );
 // std::vector<SgSymbol*> trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector<std::string> & qualifiedNameList, SgScopeStatement* currentScope );
 std::vector<SgSymbol*> trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector<MultipartReferenceType> & qualifiedNameList, SgScopeStatement* currentScope );
+std::vector<SgSymbol*> trace_back_through_UIUC(const std::vector<MultipartReferenceType> & qualifiedNameList, SgScopeStatement* currentScope );
+
 
 // DQ (4/30/2008): Modified to handle derived types
 // void trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(const SgName & variableName, SgScopeStatement* currentScope, SgVariableSymbol* & variableSymbol, SgFunctionSymbol* & functionSymbol );
