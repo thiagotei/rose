@@ -7,9 +7,13 @@ EXEC_FLAGS = -c
 
 FILES=ModDataStruct.f90 ModMPI.f90 
 
-all: ModDataStruct.f90 ModMPI.f90
-	$(EXEC) $(FILES) $(EXEC_FLAGS)
+all: 
+	
+exec: $(FILES) 
+	$(EXEC) $< $(EXEC_FLAGS)
 
+exec_debug: $(FILES) 
+	$(EXEC)  -rose:verbose 3  $< $(EXEC_FLAGS)
 clean:
 	rm -f  *.rmod *.s cab*.core *.o *.mod 
 
