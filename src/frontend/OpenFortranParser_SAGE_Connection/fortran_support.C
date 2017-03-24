@@ -2061,11 +2061,17 @@ trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variabl
      while (variableSymbol == NULL && functionSymbol == NULL && classSymbol == NULL && tempScope != NULL)
         {
 #if 1
-          printf ("*** Searching in scope = %p = %s \n",tempScope,tempScope->class_name().c_str());
-          //tempScope->get_startOfConstruct()->display("Searching in scope");
+          if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+          { 
+                printf ("*** Searching in scope = %p = %s \n",tempScope,tempScope->class_name().c_str());
+                //tempScope->get_startOfConstruct()->display("Searching in scope");
+          }
 #endif
 #if 1
-          tempScope->print_symboltable("In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()");
+          if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+          { 
+                tempScope->print_symboltable("In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()");
+          }
 #endif
 
        // DQ (11/26/2010): The variable name that we will search for needs to be case normalized (see test2010_112.f90).
@@ -2073,8 +2079,11 @@ trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variabl
           functionSymbol = tempScope->lookup_function_symbol(variableName);
           classSymbol    = tempScope->lookup_class_symbol(variableName);
 #if 1
+        if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+        {
           printf ("*** tempScope = %p = %s variableSymbol = %p functionSymbol = %p classSymbol = %p \n",
                tempScope,tempScope->class_name().c_str(),variableSymbol,functionSymbol,classSymbol);
+        }
 #endif
 
        // If we have processed the global scope then we can stop (if we have not found the symbol at this
@@ -2091,9 +2100,11 @@ trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variabl
 #if 1
   // This function could have returned a NULL pointer if there was no symbol found ???
      if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+     {
           printf ("*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = %p functionSymbol = %p \n",variableSymbol,functionSymbol);
 
-     fflush(stdout);
+        fflush(stdout);
+     }
 #endif
    }
 
