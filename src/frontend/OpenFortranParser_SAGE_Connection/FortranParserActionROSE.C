@@ -6819,7 +6819,9 @@ void c_action_label(Token_t * lbl)
         // Look for the symbol associated with the variable given by the name starting
         // at the current scope and working backwards through the parent scopes.
         std::vector<SgSymbol*> variableSymbolList =
-        trace_back_through_parent_scopes_lookup_member_variable_symbol(qualifiedNameList, getTopOfScopeStack());
+        //trace_back_through_parent_scopes_lookup_member_variable_symbol(qualifiedNameList, getTopOfScopeStack());
+        // TODO THIAGO CHANGED
+        trace_back_through_UIUC(qualifiedNameList, getTopOfScopeStack());
         SgVariableSymbol* variableSymbol = variableSymbolList.empty()? NULL : isSgVariableSymbol(variableSymbolList[0]);
 
         if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
@@ -7270,7 +7272,7 @@ void c_action_label(Token_t * lbl)
             ROSE_ASSERT( initializedName->get_scope()->get_symbol_table()->find(initializedName) != NULL);
 
             ROSE_ASSERT(initializedName->get_symbol_from_symbol_table() != NULL);
-        }
+        } // END This is the case of (variableSymbol != NULL)
 
         ROSE_ASSERT( (size_t) numPartRef >= variableSymbolList.size());
 
@@ -7713,7 +7715,8 @@ void c_action_label(Token_t * lbl)
                 classSymbol);
 
         // if (hasSelectionSubscriptList == true || hasSelectionSubscriptList == false)
-        if (hasSelectionSubscriptList == true)
+        //if (hasSelectionSubscriptList == true)
+        if(false) //CHANGED THIAGO
         {
             // This means that it is has "()" as in "foo()" or "foo(i)"
             // Note that this does not imply that this is an array or a function yet.
@@ -7757,6 +7760,7 @@ void c_action_label(Token_t * lbl)
                 SgPointerType* pointerType = isSgPointerType(variableType);
                 if (pointerType != NULL)
                 {
+                    // TODO thiago Error could be a pointer to a pointer. Fix this!
                     arrayType = isSgArrayType(pointerType->get_base_type());
                 }
 
@@ -7838,6 +7842,7 @@ void c_action_label(Token_t * lbl)
             }
         }
         else
+        if(false) //CHANGED THIAGO
         {
             // Note that test2007_164.f demonstrates that this can be a function reference... and so lacking selection-subscript-list implies this is a scalar variable.
 
