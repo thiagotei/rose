@@ -6819,9 +6819,7 @@ void c_action_label(Token_t * lbl)
         // Look for the symbol associated with the variable given by the name starting
         // at the current scope and working backwards through the parent scopes.
         std::vector<SgSymbol*> variableSymbolList =
-        //trace_back_through_parent_scopes_lookup_member_variable_symbol(qualifiedNameList, getTopOfScopeStack());
-        // TODO THIAGO CHANGED
-        trace_back_through_UIUC(qualifiedNameList, getTopOfScopeStack());
+        trace_back_through_parent_scopes_lookup_member_variable_symbol(qualifiedNameList, getTopOfScopeStack());
         SgVariableSymbol* variableSymbol = variableSymbolList.empty()? NULL : isSgVariableSymbol(variableSymbolList[0]);
 
         if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
@@ -13639,8 +13637,8 @@ void c_action_label(Token_t * lbl)
                 ROSE_ASSERT(expression->get_parent() != NULL);
             }
             // Process this second because the unit expression is deeper on the stack!
-            else if ((strncasecmp(name->text, "unit", 4) == 0) || (strncmp(
-                                    name->text, "defaultString", 13) == 0)
+            else if (((strncasecmp(name->text, "unit", 4) == 0) || (strncmp(
+                                    name->text, "defaultString", 13) == 0))
                     && (readStatement->get_unit() == NULL))
             {
                 // printf ("Processing token = %s as unit spec expression = %s \n",name->text,expression->class_name().c_str());
@@ -13817,9 +13815,9 @@ void c_action_label(Token_t * lbl)
             // The "unit=" string is optional, if it was not present then a toekn was pushed onto the stack with the text value "defaultString"
             // if ( (strncasecmp(name->text,"fmt",3) == 0) || (strncmp(name->text,"defaultString",13) == 0) && (writeStatement->get_format() == NULL) )
             // if ( (strncasecmp(name->text,"fmt",3) == 0) || (strncmp(name->text,"defaultString",13) == 0) && (writeStatement->get_format() == NULL) && initalStackDepth >= 2)
-            if ((strncasecmp(name->text, "fmt", 3) == 0) || (strncmp(name->text,
-                                    "defaultString", 13) == 0) && (writeStatement->get_format()
-                            == NULL) && numberOfDefaultOptions == 2)
+            if (((strncasecmp(name->text, "fmt", 3) == 0) || (strncmp(name->text,
+                                    "defaultString", 13) == 0)) && (writeStatement->get_format()
+                            == NULL) && (numberOfDefaultOptions == 2))
             {
                 // printf ("Processing token = %s as format spec \n",name->text);
                 // writeStatement->set_format(expression);
@@ -13830,8 +13828,8 @@ void c_action_label(Token_t * lbl)
                 labelRefExp->set_parent(writeStatement);
             }
             // Process this second because the unit expression is deeper on the stack!
-            else if ((strncasecmp(name->text, "unit", 4) == 0) || (strncmp(
-                                    name->text, "defaultString", 13) == 0)
+            else if (((strncasecmp(name->text, "unit", 4) == 0) || (strncmp(
+                                    name->text, "defaultString", 13) == 0))
                     && (writeStatement->get_unit() == NULL))
             {
                 // printf ("Processing token = %s as unit spec \n",name->text);
