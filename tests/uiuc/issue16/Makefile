@@ -7,7 +7,7 @@ EXEC_FLAGS = -c
 
 FILES=ModDataStruct.f90 ModMPI.f90 
 
-all: 
+all: exec 
 	
 exec: $(FILES) 
 	$(EXEC) $< $(EXEC_FLAGS)
