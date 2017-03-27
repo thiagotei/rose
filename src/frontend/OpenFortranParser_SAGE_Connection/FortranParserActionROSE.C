@@ -12807,7 +12807,9 @@ void c_action_label(Token_t * lbl)
 #endif
 
         SgName name = label != NULL ? label->text : "";
-        // printf ("In c_action_continue_stmt(): name of SgLabelStatement = %s \n",name.str());
+        if (SgProject::get_verbose() > DEBUG_RULE_COMMENT_LEVEL){
+           printf ("In c_action_continue_stmt(): name of SgLabelStatement = %s .\n",name.str());
+        }
         SgLabelStatement* labelStatement = new SgLabelStatement(name, NULL);
 
         ROSE_ASSERT(continueKeyword != NULL);
@@ -12838,7 +12840,7 @@ void c_action_label(Token_t * lbl)
             }
             else
             {
-                // printf ("Warning: No label found in argument to c_action_continue_stmt() and astLabelSymbolStack.empty() == true \n");
+                printf ("Warning: No label found in argument to c_action_continue_stmt() and astLabelSymbolStack.empty() == true \n");
             }
         }
 
@@ -12858,6 +12860,7 @@ void c_action_label(Token_t * lbl)
         {
             ROSE_ASSERT(astScopeStack.empty() == false);
             astScopeStack.front()->append_statement(labelStatement);
+//            printf("[action R848] appended labelStat to astScopeStack.\n");
         }
         if (continueKeyword->line == 0)
         {
@@ -12876,6 +12879,7 @@ void c_action_label(Token_t * lbl)
             = astScopeStack.front()->get_startOfConstruct()->get_col();
             labelStatement->set_parent(astScopeStack.front());
         }
+ //       printf("[action R848] Set 2nd setSourcePosition.\n");
         setSourcePosition(labelStatement, continueKeyword);
 
         // DQ (12/16/2007): A label had been pushed onto the stack, but it is redundant with the label provided as a token.
@@ -12900,8 +12904,10 @@ void c_action_label(Token_t * lbl)
 
         // DQ (10/10/2010): Mark the end of the do loop scope using the continueKeyword token.
         ROSE_ASSERT(continueKeyword != NULL);
+  //      printf("[action R848] Before leaving scopeStack size %ld.\n",astScopeStack.size());
         resetEndingSourcePosition(astScopeStack.front(), continueKeyword);
 
+  //      printf("[action R848] leaving.\n");
 #if 0
         // Output debugging information about saved state (stack) information.
         outputState("At BOTTOM of R848 c_action_continue_stmt()");
