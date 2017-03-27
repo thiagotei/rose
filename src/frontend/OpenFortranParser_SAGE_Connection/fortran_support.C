@@ -580,7 +580,7 @@ resetEndingSourcePosition( SgLocatedNode* targetLocatedNode, Token_t* token )
      ROSE_ASSERT(token != NULL);
      int newLineNumber = token->line;
 #if 0
-     printf ("Resetting the end of the target statement = %s to line = %d \n",targetLocatedNode->class_name().c_str(),newLineNumber);
+     printf ("[1] Resetting the end of the target statement = %s to line = %d \n",targetLocatedNode->class_name().c_str(),newLineNumber);
 #endif
      resetEndingSourcePosition(targetLocatedNode,newLineNumber);
 
@@ -588,7 +588,7 @@ resetEndingSourcePosition( SgLocatedNode* targetLocatedNode, Token_t* token )
      if (functionDefinition != NULL)
         {
        // Also set the ending position of the function declaration.
-       // printf ("In resetEndingSourcePosition(): Set the ending position of the related function declaration \n");
+       // printf ("[2] In resetEndingSourcePosition(): Set the ending position of the related function declaration .\n");
           SgDeclarationStatement* functionDeclaration = functionDefinition->get_declaration();
           ROSE_ASSERT(functionDeclaration != NULL);
           resetEndingSourcePosition(functionDeclaration,token);
@@ -631,7 +631,7 @@ resetEndingSourcePosition( SgLocatedNode* targetLocatedNode, Token_t* token )
           while (i != astScopeStack.end())
              {
 #if 0
-               printf ("In resetEndingSourcePosition(): Resetting the end of the block = %s to line = %d and file = %s \n",(*i)->class_name().c_str(),newLineNumber,getCurrentFilename().c_str());
+               printf ("[3] In resetEndingSourcePosition(): Resetting the end of the block = %s to line = %d and file = %s \n",(*i)->class_name().c_str(),newLineNumber,getCurrentFilename().c_str());
 #endif
                resetEndingSourcePosition(*i,newLineNumber);
 
@@ -667,8 +667,9 @@ void resetEndingSourcePosition( SgLocatedNode* targetLocatedNode, int newLineNum
   // This function is called by the other "resetEndingSourcePosition()" functions.
 
 #if 0
-     printf ("targetLocatedNode = %p = %s get_startOfConstruct()->get_line() = %d \n",targetLocatedNode,targetLocatedNode->class_name().c_str(),targetLocatedNode->get_startOfConstruct()->get_line());
-     printf ("targetLocatedNode = %p = %s get_endOfConstruct()->get_line()   = %d \n",targetLocatedNode,targetLocatedNode->class_name().c_str(),targetLocatedNode->get_endOfConstruct()->get_line());
+     printf ("[670] targetLocatedNode = %p = %s get_startOfConstruct()->get_line() = %d \n",targetLocatedNode,targetLocatedNode->class_name().c_str(),targetLocatedNode->get_startOfConstruct()->get_line());
+     printf ("[670] targetLocatedNode = %p = %s get_endOfConstruct()->get_line()   = %d \n",targetLocatedNode,targetLocatedNode->class_name().c_str(),targetLocatedNode->get_endOfConstruct()->get_line());
+     fflush(stdout);
 #endif
      // Liao, 11/12/2012. We don't expect transformation or compiler generated file info.
      ROSE_ASSERT (targetLocatedNode->get_endOfConstruct()->isTransformation()!= true);
@@ -2381,7 +2382,7 @@ trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector
                name = qualifiedNameList[i].name;
 
                ROSE_ASSERT(structureScope != NULL);
-#if 1
+#if 0
                 if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
                 {
                 printf ("[trace_back:2328] structureScope = %p = %s name = %s \n",structureScope,structureScope->class_name().c_str(),name.c_str());
@@ -2403,6 +2404,24 @@ trace_back_through_parent_scopes_lookup_member_variable_symbol(const std::vector
                printf ("In trace_back_through_parent_scopes_lookup_member_variable_symbol(): functionSymbol = %p \n",functionSymbol);
                printf ("In trace_back_through_parent_scopes_lookup_member_variable_symbol(): classSymbol    = %p \n",classSymbol);
 #endif
+               //
+               // (University of Illinois at Urbana-Champaign/Thiago Teixeira) if returns Var symbol and function symbol selects which one to go
+               // This tries to disambiguate names that could be arrays or function calls.
+               // timer = MPI_Wtime() - It is a function
+               // grid_array => region%grid(gridId) - Is array inside a derived type.
+               //
+               if(variableSymbol != NULL && functionSymbol != NULL) 
+               {
+
+                      //  if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
+                      //  {
+                                printf("[trace_back:2328] Variable - %s - and Function - %s - found with the same name on the same scope. Which one to choose? I choose function!\n", 
+                                variableSymbol->get_declaration()->get_name().str(), functionSymbol->get_declaration()->get_name().str());
+                     //   }
+               
+                        // I pick the function,so:
+                        variableSymbol = NULL;
+               }
 
                if (variableSymbol != NULL)
                   {
