@@ -1,0 +1,1398 @@
+/usr/workspace/wsa/bluenet/thiago/tools/rose-install-fork%gcc\@5.3.0/bin/testFrontEnd   -rose:verbose 3  ModTestCont_2.f90 -c
+verbose mode ON (for SgProject)
+[INFO] Processing Unparser commandline options
+[INFO] Processing Fortran commandline options
+[INFO] Processing Fortran's OFP frontend commandline options
+[INFO] Processing Fortran's ofp frontend JVM commandline options
+[INFO] Processing Java commandline options: ModTestCont_2.f90 -c -rose:skip_translation_from_edg_ast_to_rose_ast 
+[INFO] Processing Java -source 
+[INFO] Processing Java -target 
+[INFO] Processing Java's ECJ frontend commandline options
+[INFO] Processing Java -rose:java:ecj:batch_mode 
+[INFO] -rose:java:ecj:batch_mode=0
+[INFO] Processing Java's ECJ frontend JVM commandline options
+[INFO] Processing GNU commandline options
+[INFO] Processing X10 commandline options
+Searching for -isystem options iter = /usr/workspace/wsa/bluenet/thiago/tools/rose-install-fork%gcc@5.3.0/bin/testFrontEnd 
+Searching for -isystem options iter = ModTestCont_2.f90 
+Searching for -isystem options iter = -c 
+Searching for -isystem options iter = -rose:skip_translation_from_edg_ast_to_rose_ast 
+######################### Inside of CommandlineProcessing::generateSourceFilenames() ############################ 
+sourceFileList = ModTestCont_2.f90  
+######################### Leaving of CommandlineProcessing::generateSourceFilenames() ############################ 
+In SgProject::processCommandLine() (verbose mode ON): 
+In SgProject::display(In SgProject::processCommandLine()) 
+   p_verbose                                 = 3 
+   p_outputFileName                          = a.out 
+   p_sourceFileNameList.size()               = 1 
+   p_sourceFileNameList                      = 
+      ModTestCont_2.f90  
+   p_objectFileNameList.size()               = 0 
+   p_objectFileNameList                      = 
+       
+   p_libraryFileList.size()                  = 0 
+   p_libraryFileList                         = 
+       
+   p_librarySpecifierList.size()             = 0 
+   p_librarySpecifierList                    = 
+       
+   p_libraryDirectorySpecifierList.size()    = 0 
+   p_libraryDirectorySpecifierList           = 
+       
+   p_includeDirectorySpecifierList.size()    = 0 
+   p_includeDirectorySpecifierList           = 
+       
+   p_compileOnly                             = true 
+   p_prelink                                 = false 
+   p_template_instantiation_mode             = 1 
+   p_astMerge                                = false 
+   p_astMergeCommandFile                     =  
+   p_projectSpecificDatabaseFile             =  
+   p_compilationPerformanceFile              =  
+   p_includePathList.size()                  = 0 
+   p_includePathList                         = 
+       
+   p_excludePathList.size()                  = 0 
+   p_excludePathList                         = 
+       
+   p_includeFileList.size()                  = 0 
+   p_includeFileList                         = 
+       
+   p_excludeFileList.size()                  = 0 
+   p_excludeFileList                         = 
+       
+   p_preincludeFileList.size()               = 0 
+   p_preincludeFileList                      = 
+       
+   p_preincludeDirectoryList.size()          = 0 
+   p_preincludeDirectoryList                 = 
+       
+   p_binary_only()                           = false 
+   p_frontendConstantFolding                 = false 
+   p_unparse_in_same_directory_as_input_file = false 
+   p_noclobber_output_file              = false 
+   p_noclobber_if_different_output_file = false 
+   p_appendPID = false 
+   p_unparseTemplateDeclarationsFromAST = false 
+In this project: numberOfFiles() = 0 
+Calling Open Fortran Parser: jserver_init() 
+######################### Inside of CommandlineProcessing::generateSourceFilenames() ############################ 
+sourceFileList = ModTestCont_2.f90  
+######################### Leaving of CommandlineProcessing::generateSourceFilenames() ############################ 
+######################### Inside of CommandlineProcessing::generateSourceFilenames() ############################ 
+sourceFileList = ModTestCont_2.f90  
+######################### Leaving of CommandlineProcessing::generateSourceFilenames() ############################ 
+[INFO] [Frontend] Running in serial mode
+[INFO] [SgFile::callFrontEnd]
+verbose mode ON (for SgFile)
+option -rose:skip_translation_from_edg_ast_to_rose_ast found 
+The remaining non-rose options will be passed onto either the parser/front-end or the backend (vendor) the compiler: 
+  argv[1]= ModTestCont_2.f90
+  argv[2]= -c
+Checking syntax of input program using gfortran: syntaxCheckingCommandline = /usr/workspace/wsa/bluenet/thiago/spack/opt/spack/chaos_5_x86_64_ib/gcc-4.8.5/gcc-5.3.0-goasyn7clcmhq72w6rfgjboyachh3s4k/bin/gfortran -fsyntax-only -std=legacy -ffree-line-length-none  
+Checking syntax of input program using gfortran: syntaxCheckingCommandline = /usr/workspace/wsa/bluenet/thiago/spack/opt/spack/chaos_5_x86_64_ib/gcc-4.8.5/gcc-5.3.0-goasyn7clcmhq72w6rfgjboyachh3s4k/bin/gfortran -fsyntax-only -std=legacy -ffree-line-length-none /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90  
+Fortran numberOfCommandLineArguments = 5 frontEndCommandLine = /usr/workspace/wsa/bluenet/thiago/tools/rose-install-fork%gcc@5.3.0/bin/testFrontEnd --class fortran.ofp.parser.c.jni.FortranParserActionJNI -I/usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90  
+Calling openFortranParser_main(): OpenFortranParser_globalFilePointer = 0x2aaab51a9010 
+Call the function that will start a JVM and call the OFP 
+
+Java JVM commandline = /usr/workspace/wsa/bluenet/thiago/tools/rose-install-fork%gcc@5.3.0/bin/testFrontEnd --class fortran.ofp.parser.c.jni.FortranParserActionJNI -I/usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+ROSE modified LD_LIBRARY_PATH = /g/g92/thiago/scratch/tools/rose-install-fork%gcc@5.3.0/lib 
+In c_action_start_of_file(/usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) 
+In initialize_global_scope_if_required(): OpenFortranParser_globalFilePointer = 0x2aaab51a9010 
+In c_action_module_stmt__begin() 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 2 col 18
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 1 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_module_stmt(): label = (nil) = NULL moduleKeyword = 0xa4da40 = Module id = 0xa4da80 = ModTestCont 
+In setSourcePosition locatedNode = 0x2aaac8542010 = SgModuleStatement token = 0xa4da40 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 2 
+In setSourcePosition(SgInitializedName 0x2aaac8542010 = SgModuleStatement) line = 2 column = 0 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_specification_part: numUseStmts = 0 numImportStmts = 0 numImplStmts = 0 numDeclConstructs = 0 
+
+
+################################################################################# 
+#############   END OF DECLARATIONS START OF ACTION STATEMENTS   ################ 
+################################################################################# 
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 4 col 9
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 2 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_contains_stmt(): label = (nil) = NULL keyword = 0xa509d0 = CONTAINS 
+In c_action_subroutine_stmt__begin(): nothing to do here! 
+In c_action_dummy_arg_list__begin() 
+In c_action_dummy_arg(): dummy = 0xa50b40 
+In c_action_dummy_arg_list(): count = 1 
+
+
+In outputState (At BOTTOM of R1233 c_action_dummy_arg_list()): maxStackSize = 2 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     (FcLen)                         ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 7 col 27
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 2 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     (FcLen)                         ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_subroutine_stmt(): label = (nil) (routine name) name = SRT2 hasPrefix = false hasDummyArgList = true hasBindingSpec = false hasArgSpecifier = true 
+In setSourcePosition locatedNode = 0x2aaac86e1010 = SgProcedureHeaderStatement token = 0xa50300 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 7 
+In setSourcePosition(SgInitializedName 0x2aaac86e1010 = SgProcedureHeaderStatement) line = 7 column = 5 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In setSourcePosition locatedNode = 0x19f7630 = SgFunctionParameterList token = 0xa50300 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 7 
+In setSourcePosition(SgInitializedName 0x19f7630 = SgFunctionParameterList) line = 7 column = 5 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In setSourcePosition initializedName = 0x1cd5c80 = FcLen token = 0xa50b40 line = 7 
+In setSourcePosition(SgInitializedName 0x1cd5c80 = FcLen) line = 7 column = 21 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_intrinsic_type_spec(): keyword1 = 0xcb85c0 = integer keyword2 = (nil) = NULL type = 400, hasKindSelector = false 
+In R502 c_action_declaration_type_spec() udtKeyword = (nil) = NULL type = 500 
+type == DeclarationTypeSpec_INTRINSIC 
+No type found on astTypeStack (make sure there is a base type on the astBaseTypeStack) 
+In c_action_intent_spec() intentKeyword1 = 0xcb8730 = in intentKeyword2 = (nil) = NULL intent = 600 
+In R503 c_action_attr_spec(): attrKeyword = 0xcb8790 = intent attr = 811 
+found a INTENT spec 
+In R504 R503-F2008 c_action_entity_decl(): save variableName = FcLen file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 hasArraySpec = false hasCoarraySpec = false hasCharLength = false hasInitialization = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = FcLen currentScope = 0x1b76350 = SgBasicBlock 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1c0aa60 = SgFunctionDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d2900,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1c0aa60 = SgFunctionDefinition 
+Symbol    0: name = FcLen SgSymbol = 0x1dc7f90 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd5c80 = SgInitializedName = initialized_name_FcLen 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__ARG1 
+*** tempScope = 0x1c0aa60 = SgFunctionDefinition variableSymbol = 0x1dc7f90 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc7f90 functionSymbol = (nil) 
+In setSourcePosition initializedName = 0x1cd5c80 = FcLen token = 0xcb8710 line = 8 
+In setSourcePosition(SgInitializedName 0x1cd5c80 = FcLen) line = 8 column = 31 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In R504 c_action_entity_decl_list: (number of variable declarations) count = 1 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 8 col 36
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 4 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_type_declaration_stmt: numAttributes = 1 
+In c_action_declaration_construct() 
+In c_action_intrinsic_type_spec(): keyword1 = 0xcb8c30 = integer keyword2 = (nil) = NULL type = 400, hasKindSelector = false 
+In R502 c_action_declaration_type_spec() udtKeyword = (nil) = NULL type = 500 
+type == DeclarationTypeSpec_INTRINSIC 
+No type found on astTypeStack (make sure there is a base type on the astBaseTypeStack) 
+In R504 R503-F2008 c_action_entity_decl(): save variableName = i file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 hasArraySpec = false hasCoarraySpec = false hasCharLength = false hasInitialization = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = i currentScope = 0x1b76350 = SgBasicBlock 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1c0aa60 = SgFunctionDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d2900,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = FcLen 
+Symbol table has parent = 0x1c0aa60 = SgFunctionDefinition 
+Symbol    0: name = FcLen SgSymbol = 0x1dc7f90 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5c80 = SgInitializedName = initialized_name_FcLen 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope__FcLen 
+*** tempScope = 0x1c0aa60 = SgFunctionDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x170d450 = SgClassDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xa4fc20,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x170d450 = SgClassDefinition 
+Symbol    0: name = SRT2 SgSymbol = 0x1b5ec40 = SgFunctionSymbol type = 0x19b1120 = SgFunctionType = SgFunctionType get_symbol_basis() = 0x2aaac86e1010 = SgProcedureHeaderStatement = SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R 
+*** tempScope = 0x170d450 = SgClassDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2aaab50c6120 = SgGlobal 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x6cf5d0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2aaab50c6120 = SgGlobal 
+Symbol    0: name = ModTestCont SgSymbol = 0xca06c0 = SgClassSymbol type = 0x16594d0 = SgClassType = ModTestCont get_symbol_basis() = 0x2aaac8542360 = SgModuleStatement = _fortran_module_stmt_0x2aaac8542360 
+   Symbol's associated mangled name = _module_ 
+*** tempScope = 0x2aaab50c6120 = SgGlobal variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = (nil) functionSymbol = (nil) 
+In setSourcePosition initializedName = 0x1cd5e70 = i token = 0xcb8820 line = 10 
+In setSourcePosition(SgInitializedName 0x1cd5e70 = i) line = 10 column = 16 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In R504 c_action_entity_decl_list: (number of variable declarations) count = 1 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 10 col 17
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 4 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_type_declaration_stmt: numAttributes = 0 
+In c_action_declaration_construct() 
+In c_action_specification_part: numUseStmts = 0 numImportStmts = 0 numImplStmts = 0 numDeclConstructs = 2 
+
+
+################################################################################# 
+#############   END OF DECLARATIONS START OF ACTION STATEMENTS   ################ 
+################################################################################# 
+
+
+In c_action_do_variable() id = i 
+In c_action_int_literal_constant(): digitString = 0xcb9270 = 1 kindParam = (nil) 
+In setSourcePosition locatedNode = 0x1f7d7c0 = SgIntVal token = 0xcb9270 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 12 
+In setSourcePosition(SgInitializedName 0x1f7d7c0 = SgIntVal) line = 12 column = 15 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_signed_operand(): addOp = (nil) = NULL 
+In c_action_add_operand(): numAddOps = 0 
+In c_action_level_2_expr(): numConcatOps = 0 
+In c_action_level_3_expr(): relOp = (nil) = NULL 
+In c_action_and_operand(): hasNotOp = false numAndOps = 0 
+In c_action_or_operand(): numOrOps = 0 
+In c_action_equiv_operand(): numEquivOps = 0 
+In c_action_level_5_expr(): numDefinedBinaryOps = 0 
+In R722 c_action_expr() 
+In R613 c_action_part_ref() id = FcLen on line 12 hasSelectionSubscriptList = false hasImageSelector = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = FcLen currentScope = 0x1b76350 = SgBasicBlock 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 2): 
+Internal static data: p_no_name: false p_name = i 
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+Symbol    0: name = SRT2 SgSymbol = 0x1dc7ff0 = SgVariableSymbol type = 0x197a610 = SgTypeVoid = SgTypeVoid get_symbol_basis() = 0x1cd6060 = SgInitializedName = initialized_name_SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SRT2 
+Symbol    1: name = i SgSymbol = 0x1dc7fc0 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5e70 = SgInitializedName = initialized_name_i 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__i 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1c0aa60 = SgFunctionDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d2900,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = FcLen 
+Symbol table has parent = 0x1c0aa60 = SgFunctionDefinition 
+Symbol    0: name = FcLen SgSymbol = 0x1dc7f90 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5c80 = SgInitializedName = initialized_name_FcLen 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope__FcLen 
+*** tempScope = 0x1c0aa60 = SgFunctionDefinition variableSymbol = 0x1dc7f90 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc7f90 functionSymbol = (nil) 
+In R612 c_action_data_ref(): (variable built here) numPartRef = 1 
+[trace_back:2328] qualifiedNameList name = FcLen 
+[trace_back:2328] structureScope = 0x1b76350 = SgBasicBlock name = FcLen 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = FcLen currentScope = 0x1b76350 = SgBasicBlock 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 2): 
+Internal static data: p_no_name: false p_name = i 
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+Symbol    0: name = SRT2 SgSymbol = 0x1dc7ff0 = SgVariableSymbol type = 0x197a610 = SgTypeVoid = SgTypeVoid get_symbol_basis() = 0x1cd6060 = SgInitializedName = initialized_name_SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SRT2 
+Symbol    1: name = i SgSymbol = 0x1dc7fc0 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5e70 = SgInitializedName = initialized_name_i 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__i 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1c0aa60 = SgFunctionDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d2900,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = FcLen 
+Symbol table has parent = 0x1c0aa60 = SgFunctionDefinition 
+Symbol    0: name = FcLen SgSymbol = 0x1dc7f90 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5c80 = SgInitializedName = initialized_name_FcLen 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope__FcLen 
+*** tempScope = 0x1c0aa60 = SgFunctionDefinition variableSymbol = 0x1dc7f90 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc7f90 functionSymbol = (nil) 
+[findStructureScope] type SgTypeInt scope 0x1b76350 scope name  .
+[findStructureScope] Leaving.
+[trace_back:2328] scope (nil) iter 0 var 0x1dc7f90
+After trace_back_through_parent_scopes_lookup_variable_symbol(FcLen,astScopeStack) variableSymbol = 0x1dc7f90 = FcLen_symbol_ 
+variableSymbolList.size() = 1
+Found a previously defined variableSymbol = 0x1dc7f90 variable = FcLen 
+stackHoldsAnIndexExpression = false 
+astExpressionStack.front() = SgIntVal 
+In setSourcePosition locatedNode = 0x1fbbfd0 = SgVarRefExp token = 0xcb8f40 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 12 
+In setSourcePosition(SgInitializedName 0x1fbbfd0 = SgVarRefExp) line = 12 column = 18 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+Pushing variable = 0x1fbbfd0 = SgVarRefExp onto the expression stack 
+In (unknown rule) c_action_designator_or_func_ref() 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_signed_operand(): addOp = (nil) = NULL 
+In c_action_add_operand(): numAddOps = 0 
+In c_action_level_2_expr(): numConcatOps = 0 
+In c_action_level_3_expr(): relOp = (nil) = NULL 
+In c_action_and_operand(): hasNotOp = false numAndOps = 0 
+In c_action_or_operand(): numOrOps = 0 
+In c_action_equiv_operand(): numEquivOps = 0 
+In c_action_level_5_expr(): numDefinedBinaryOps = 0 
+In R722 c_action_expr() 
+In c_action_loop_control(): whileKeyword = (nil) = NULL doConstructType = 1701 hasOptExpr = false 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 12 col 23
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 2 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 4 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               (SgIntVal : integer_value_exp_1)( No Node )                     (i)                             ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)(SgVarRefExp : var_ref_of_FcLen)( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_do_stmt(): hasLoopControl = true 
+   label       = (nil) = NULL 
+   id          = (nil) = NULL 
+   doKeyword   = 0xcb8d30 = do 
+   digitString = (nil) = NULL 
+   eos         = 0xcb89f0 = 
+ 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = i currentScope = 0x1b76350 = SgBasicBlock 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 2): 
+Internal static data: p_no_name: false p_name = i 
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+Symbol    0: name = SRT2 SgSymbol = 0x1dc7ff0 = SgVariableSymbol type = 0x197a610 = SgTypeVoid = SgTypeVoid get_symbol_basis() = 0x1cd6060 = SgInitializedName = initialized_name_SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SRT2 
+Symbol    1: name = i SgSymbol = 0x1dc7fc0 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5e70 = SgInitializedName = initialized_name_i 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__i 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = 0x1dc7fc0 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc7fc0 functionSymbol = (nil) 
+In setSourcePosition locatedNode = 0x1fbc038 = SgVarRefExp token = 0xcb91f0 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 12 
+In setSourcePosition(SgInitializedName 0x1fbc038 = SgVarRefExp) line = 12 column = 11 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In setSourcePosition locatedNode = 0x1feec60 = SgAssignOp token = 0xcb8d30 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 12 
+In setSourcePosition(SgInitializedName 0x1feec60 = SgAssignOp) line = 12 column = 8 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In setSourcePosition locatedNode = 0x204c880 = SgFortranDo token = 0xcb8d30 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 12 
+In setSourcePosition(SgInitializedName 0x204c880 = SgFortranDo) line = 12 column = 8 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+astLabelSymbolStack.empty() == true, no label on stack for statement = 0x204c880 = SgFortranDo 
+In R613 c_action_part_ref() id = p on line 19 hasSelectionSubscriptList = false hasImageSelector = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b76480 = SgBasicBlock 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x204c880 = SgFortranDo 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9340,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x204c880 = SgFortranDo 
+*** tempScope = 0x204c880 = SgFortranDo variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 2): 
+Internal static data: p_no_name: false p_name = i 
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+Symbol    0: name = SRT2 SgSymbol = 0x1dc7ff0 = SgVariableSymbol type = 0x197a610 = SgTypeVoid = SgTypeVoid get_symbol_basis() = 0x1cd6060 = SgInitializedName = initialized_name_SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SRT2 
+Symbol    1: name = i SgSymbol = 0x1dc7fc0 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5e70 = SgInitializedName = initialized_name_i 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__i 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1c0aa60 = SgFunctionDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d2900,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = FcLen 
+Symbol table has parent = 0x1c0aa60 = SgFunctionDefinition 
+Symbol    0: name = FcLen SgSymbol = 0x1dc7f90 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5c80 = SgInitializedName = initialized_name_FcLen 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope__FcLen 
+*** tempScope = 0x1c0aa60 = SgFunctionDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x170d450 = SgClassDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xa4fc20,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x170d450 = SgClassDefinition 
+Symbol    0: name = SRT2 SgSymbol = 0x1b5ec40 = SgFunctionSymbol type = 0x19b1120 = SgFunctionType = SgFunctionType get_symbol_basis() = 0x2aaac86e1010 = SgProcedureHeaderStatement = SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R 
+*** tempScope = 0x170d450 = SgClassDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2aaab50c6120 = SgGlobal 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x6cf5d0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2aaab50c6120 = SgGlobal 
+Symbol    0: name = ModTestCont SgSymbol = 0xca06c0 = SgClassSymbol type = 0x16594d0 = SgClassType = ModTestCont get_symbol_basis() = 0x2aaac8542360 = SgModuleStatement = _fortran_module_stmt_0x2aaac8542360 
+   Symbol's associated mangled name = _module_ 
+*** tempScope = 0x2aaab50c6120 = SgGlobal variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = (nil) functionSymbol = (nil) 
+In R612 c_action_data_ref(): (variable built here) numPartRef = 1 
+[trace_back:2328] qualifiedNameList name = p 
+[trace_back:2328] structureScope = 0x1b76480 = SgBasicBlock name = p 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b76480 = SgBasicBlock 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x204c880 = SgFortranDo 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9340,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x204c880 = SgFortranDo 
+*** tempScope = 0x204c880 = SgFortranDo variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 2): 
+Internal static data: p_no_name: false p_name = i 
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+Symbol    0: name = SRT2 SgSymbol = 0x1dc7ff0 = SgVariableSymbol type = 0x197a610 = SgTypeVoid = SgTypeVoid get_symbol_basis() = 0x1cd6060 = SgInitializedName = initialized_name_SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SRT2 
+Symbol    1: name = i SgSymbol = 0x1dc7fc0 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5e70 = SgInitializedName = initialized_name_i 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__i 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1c0aa60 = SgFunctionDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d2900,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = FcLen 
+Symbol table has parent = 0x1c0aa60 = SgFunctionDefinition 
+Symbol    0: name = FcLen SgSymbol = 0x1dc7f90 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5c80 = SgInitializedName = initialized_name_FcLen 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope__FcLen 
+*** tempScope = 0x1c0aa60 = SgFunctionDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x170d450 = SgClassDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xa4fc20,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x170d450 = SgClassDefinition 
+Symbol    0: name = SRT2 SgSymbol = 0x1b5ec40 = SgFunctionSymbol type = 0x19b1120 = SgFunctionType = SgFunctionType get_symbol_basis() = 0x2aaac86e1010 = SgProcedureHeaderStatement = SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R 
+*** tempScope = 0x170d450 = SgClassDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2aaab50c6120 = SgGlobal 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x6cf5d0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2aaab50c6120 = SgGlobal 
+Symbol    0: name = ModTestCont SgSymbol = 0xca06c0 = SgClassSymbol type = 0x16594d0 = SgClassType = ModTestCont get_symbol_basis() = 0x2aaac8542360 = SgModuleStatement = _fortran_module_stmt_0x2aaac8542360 
+   Symbol's associated mangled name = _module_ 
+*** tempScope = 0x2aaab50c6120 = SgGlobal variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = (nil) functionSymbol = (nil) 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b76480 = SgBasicBlock 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x204c880 = SgFortranDo 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9340,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x204c880 = SgFortranDo 
+*** tempScope = 0x204c880 = SgFortranDo variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76350 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d27e0,label = Called from SgScopeStatement::print_symboltable size = 2): 
+Internal static data: p_no_name: false p_name = i 
+Symbol table has parent = 0x1b76350 = SgBasicBlock 
+Symbol    0: name = SRT2 SgSymbol = 0x1dc7ff0 = SgVariableSymbol type = 0x197a610 = SgTypeVoid = SgTypeVoid get_symbol_basis() = 0x1cd6060 = SgInitializedName = initialized_name_SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SRT2 
+Symbol    1: name = i SgSymbol = 0x1dc7fc0 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5e70 = SgInitializedName = initialized_name_i 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__i 
+*** tempScope = 0x1b76350 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1c0aa60 = SgFunctionDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x7d2900,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = FcLen 
+Symbol table has parent = 0x1c0aa60 = SgFunctionDefinition 
+Symbol    0: name = FcLen SgSymbol = 0x1dc7f90 = SgVariableSymbol type = 0x1ddf6a0 = SgTypeInt = SgTypeInt get_symbol_basis() = 0x1cd5c80 = SgInitializedName = initialized_name_FcLen 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope__FcLen 
+*** tempScope = 0x1c0aa60 = SgFunctionDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x170d450 = SgClassDefinition 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xa4fc20,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x170d450 = SgClassDefinition 
+Symbol    0: name = SRT2 SgSymbol = 0x1b5ec40 = SgFunctionSymbol type = 0x19b1120 = SgFunctionType = SgFunctionType get_symbol_basis() = 0x2aaac86e1010 = SgProcedureHeaderStatement = SRT2 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R 
+*** tempScope = 0x170d450 = SgClassDefinition variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2aaab50c6120 = SgGlobal 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0x6cf5d0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2aaab50c6120 = SgGlobal 
+Symbol    0: name = ModTestCont SgSymbol = 0xca06c0 = SgClassSymbol type = 0x16594d0 = SgClassType = ModTestCont get_symbol_basis() = 0x2aaac8542360 = SgModuleStatement = _fortran_module_stmt_0x2aaac8542360 
+   Symbol's associated mangled name = _module_ 
+*** tempScope = 0x2aaab50c6120 = SgGlobal variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = (nil) functionSymbol = (nil) 
+Warning: trace_back_through_parent_scopes_lookup_variable_symbol(): could not locate the specified variable (for p) in any outer symbol table: astNameStack.size() = 1 
+astNameStack.front() = 0xcb9580 = p 
+[trace_back:2328] scope (nil) iter 0 var (nil)
+After trace_back_through_parent_scopes_lookup_variable_symbol(p,astScopeStack) variableSymbol = (nil) = NULL 
+variableSymbolList.size() = 0
+In trace_back_through_parent_scopes_lookup_derived_type_symbol(): tempScope = 0x1b76480 = SgBasicBlock = 0x1b76480 
+In trace_back_through_parent_scopes_lookup_derived_type_symbol(): tempScope = 0x204c880 = SgFortranDo = 0x204c880 
+In trace_back_through_parent_scopes_lookup_derived_type_symbol(): tempScope = 0x1b76350 = SgBasicBlock = 0x1b76350 
+In trace_back_through_parent_scopes_lookup_derived_type_symbol(): tempScope = 0x1c0aa60 = SgFunctionDefinition = SRT2 
+In trace_back_through_parent_scopes_lookup_derived_type_symbol(): tempScope = 0x170d450 = SgClassDefinition = _fortran_module_stmt_0x2aaac8542010 
+In trace_back_through_parent_scopes_lookup_derived_type_symbol(): tempScope = 0x2aaab50c6120 = SgGlobal = 0x2aaab50c6120 
+Warning: trace_back_through_parent_scopes_lookup_derived_type_symbol(): could not locate the specified derived type p in any outer symbol table 
+isAnIntrinsicFunction   = false 
+isANonIntrinsicFunction = false 
+isADerivedType          = false 
+variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+Push the name onto the astNameStack 
+Calling buildVariableDeclaration to build an implicitly defined variable: name = p type = SgTypeFloat astNameStack.size() = 2 
+In buildVariableDeclaration(): isAnImplicitNoneScope = false 
+In buildVariableDeclaration(): variableDeclaration = 0x2aaac89536b0 being built astNodeStack.size() = 1 
+In buildVariableDeclaration(): initializedName = 0x1cd6250 = p initializer = (nil) 
+After variableDeclaration->prepend_variable(): initializedName = 0x1cd6250 = p initializer = (nil) 
+Unnecessary call to setSourcePosition(SgInitializedName = 0x1cd6250 = initialized_name_p ) for start info. 
+Unnecessary call to setSourcePosition(SgInitializedName = 0x1cd6250 = initialized_name_p ) for end info. 
+DONE: Calling buildVariableDeclaration to build an implicitly defined variable 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b76480 = SgBasicBlock 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+stackHoldsAnIndexExpression = false 
+In setSourcePosition locatedNode = 0x1fbc0a0 = SgVarRefExp token = 0xcb9580 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 19 
+In setSourcePosition(SgInitializedName 0x1fbc0a0 = SgVarRefExp) line = 19 column = 14 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+Pushing variable = 0x1fbc0a0 = SgVarRefExp onto the expression stack 
+In c_action_designator() hasSubstringRange = false 
+
+
+In outputState (At TOP of R602 c_action_designator()): maxStackSize = 6 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               (SgVarRefExp : var_ref_of_p)    ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76480)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_variable() 
+In R613 c_action_part_ref() id = p on line 19 hasSelectionSubscriptList = false hasImageSelector = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b76480 = SgBasicBlock 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+In R612 c_action_data_ref(): (variable built here) numPartRef = 1 
+[trace_back:2328] qualifiedNameList name = p 
+[trace_back:2328] structureScope = 0x1b76480 = SgBasicBlock name = p 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b76480 = SgBasicBlock 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+[findStructureScope] type SgTypeFloat scope 0x1b76480 scope name  .
+[findStructureScope] Leaving.
+[trace_back:2328] scope (nil) iter 0 var 0x1dc8020
+After trace_back_through_parent_scopes_lookup_variable_symbol(p,astScopeStack) variableSymbol = 0x1dc8020 = p_symbol_ 
+variableSymbolList.size() = 1
+Found a previously defined variableSymbol = 0x1dc8020 variable = p 
+stackHoldsAnIndexExpression = false 
+astExpressionStack.front() = SgVarRefExp 
+In setSourcePosition locatedNode = 0x1fbc108 = SgVarRefExp token = 0xcb9660 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 19 
+In setSourcePosition(SgInitializedName 0x1fbc108 = SgVarRefExp) line = 19 column = 18 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+Pushing variable = 0x1fbc108 = SgVarRefExp onto the expression stack 
+In (unknown rule) c_action_designator_or_func_ref() 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_signed_operand(): addOp = (nil) = NULL 
+In c_action_add_op(): addKeyword = + 
+In c_action_int_literal_constant(): digitString = 0xa4be60 = 1 kindParam = (nil) 
+In setSourcePosition locatedNode = 0x1f7d840 = SgIntVal token = 0xa4be60 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 19 
+In setSourcePosition(SgInitializedName 0x1f7d840 = SgIntVal) line = 19 column = 22 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_add_operand__add_op():addOp->text = + 
+In setSourcePosition locatedNode = 0x20ecb10 = SgAddOp token = 0xa4bf10 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 19 
+In setSourcePosition(SgInitializedName 0x20ecb10 = SgAddOp) line = 19 column = 20 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In setOperatorSourcePosition(SgExpression 0x20ecb10 = SgAddOp) line = 19 column = 20 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_add_operand(): numAddOps = 1 
+In c_action_level_2_expr(): numConcatOps = 0 
+In c_action_level_3_expr(): relOp = (nil) = NULL 
+In c_action_and_operand(): hasNotOp = false numAndOps = 0 
+In c_action_or_operand(): numOrOps = 0 
+In c_action_equiv_operand(): numEquivOps = 0 
+In c_action_level_5_expr(): numDefinedBinaryOps = 0 
+In R722 c_action_expr() 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 19 col 23
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 2 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 6 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               (SgVarRefExp : var_ref_of_p)    ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)(SgAddOp : SgAddOp_undef_name)  ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76480)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_assignment_stmt(): label = (nil) = NULL 
+astLabelSymbolStack.empty() == true, no label on stack for statement = 0x2123620 = SgExprStatement 
+Pushing this expressionStatement onto the astNodeStack for optional use by where statement 
+In c_action_action_stmt(): astNodeStack = 1 
+Clearing the astNodeStack of IR nodes that were pushed so that a possible where statement could use them 
+In c_action_executable_construct(): astExpressionStack = 0 astNodeStack = 0 
+In R807 c_action_if_stmt__begin() 
+
+
+In outputState (At TOP of R807 c_action_if_stmt__begin()): maxStackSize = 6 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76480)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In R613 c_action_part_ref() id = p on line 20 hasSelectionSubscriptList = false hasImageSelector = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b765b0 = SgBasicBlock 
+*** Searching in scope = 0x1b765b0 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9440,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b765b0 = SgBasicBlock 
+*** tempScope = 0x1b765b0 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2152430 = SgIfStmt 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb94c0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2152430 = SgIfStmt 
+*** tempScope = 0x2152430 = SgIfStmt variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+In R612 c_action_data_ref(): (variable built here) numPartRef = 1 
+[trace_back:2328] qualifiedNameList name = p 
+[trace_back:2328] structureScope = 0x1b765b0 = SgBasicBlock name = p 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b765b0 = SgBasicBlock 
+*** Searching in scope = 0x1b765b0 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9440,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b765b0 = SgBasicBlock 
+*** tempScope = 0x1b765b0 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2152430 = SgIfStmt 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb94c0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2152430 = SgIfStmt 
+*** tempScope = 0x2152430 = SgIfStmt variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+[findStructureScope] type SgTypeFloat scope 0x1b765b0 scope name  .
+[findStructureScope] Leaving.
+[trace_back:2328] scope (nil) iter 0 var 0x1dc8020
+After trace_back_through_parent_scopes_lookup_variable_symbol(p,astScopeStack) variableSymbol = 0x1dc8020 = p_symbol_ 
+variableSymbolList.size() = 1
+Found a previously defined variableSymbol = 0x1dc8020 variable = p 
+stackHoldsAnIndexExpression = false 
+In setSourcePosition locatedNode = 0x1fbc170 = SgVarRefExp token = 0xcb8ad0 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x1fbc170 = SgVarRefExp) line = 20 column = 17 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+Pushing variable = 0x1fbc170 = SgVarRefExp onto the expression stack 
+In (unknown rule) c_action_designator_or_func_ref() 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_signed_operand(): addOp = (nil) = NULL 
+In c_action_add_operand(): numAddOps = 0 
+In c_action_level_2_expr(): numConcatOps = 0 
+In c_action_rel_op(): relOp = > 
+In c_action_int_literal_constant(): digitString = 0xa4c120 = 12 kindParam = (nil) 
+In setSourcePosition locatedNode = 0x1f7d8c0 = SgIntVal token = 0xa4c120 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x1f7d8c0 = SgIntVal) line = 20 column = 21 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_signed_operand(): addOp = (nil) = NULL 
+In c_action_add_operand(): numAddOps = 0 
+In c_action_level_2_expr(): numConcatOps = 0 
+In c_action_level_3_expr(): relOp = 0xa4c460 = > 
+In setSourcePosition locatedNode = 0x21f26c0 = SgGreaterThanOp token = 0xa4c460 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x21f26c0 = SgGreaterThanOp) line = 20 column = 19 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_and_operand(): hasNotOp = false numAndOps = 0 
+In c_action_or_operand(): numOrOps = 0 
+In c_action_equiv_operand(): numEquivOps = 0 
+In c_action_level_5_expr(): numDefinedBinaryOps = 0 
+In R722 c_action_expr() 
+In R613 c_action_part_ref() id = p on line 20 hasSelectionSubscriptList = false hasImageSelector = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b765b0 = SgBasicBlock 
+*** Searching in scope = 0x1b765b0 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9440,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b765b0 = SgBasicBlock 
+*** tempScope = 0x1b765b0 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2152430 = SgIfStmt 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb94c0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2152430 = SgIfStmt 
+*** tempScope = 0x2152430 = SgIfStmt variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+In R612 c_action_data_ref(): (variable built here) numPartRef = 1 
+[trace_back:2328] qualifiedNameList name = p 
+[trace_back:2328] structureScope = 0x1b765b0 = SgBasicBlock name = p 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b765b0 = SgBasicBlock 
+*** Searching in scope = 0x1b765b0 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9440,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b765b0 = SgBasicBlock 
+*** tempScope = 0x1b765b0 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2152430 = SgIfStmt 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb94c0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2152430 = SgIfStmt 
+*** tempScope = 0x2152430 = SgIfStmt variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+[findStructureScope] type SgTypeFloat scope 0x1b765b0 scope name  .
+[findStructureScope] Leaving.
+[trace_back:2328] scope (nil) iter 0 var 0x1dc8020
+After trace_back_through_parent_scopes_lookup_variable_symbol(p,astScopeStack) variableSymbol = 0x1dc8020 = p_symbol_ 
+variableSymbolList.size() = 1
+Found a previously defined variableSymbol = 0x1dc8020 variable = p 
+stackHoldsAnIndexExpression = false 
+astExpressionStack.front() = SgGreaterThanOp 
+In setSourcePosition locatedNode = 0x1fbc1d8 = SgVarRefExp token = 0xa4b810 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x1fbc1d8 = SgVarRefExp) line = 20 column = 25 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+Pushing variable = 0x1fbc1d8 = SgVarRefExp onto the expression stack 
+In c_action_designator() hasSubstringRange = false 
+
+
+In outputState (At TOP of R602 c_action_designator()): maxStackSize = 8 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               (SgGreaterThanOp : SgGreaterThanOp_undef_name)( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)(SgVarRefExp : var_ref_of_p)    ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76480)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgIfStmt : 0x2152430)                    ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b765b0)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_variable() 
+In R613 c_action_part_ref() id = p on line 20 hasSelectionSubscriptList = false hasImageSelector = false 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b765b0 = SgBasicBlock 
+*** Searching in scope = 0x1b765b0 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9440,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b765b0 = SgBasicBlock 
+*** tempScope = 0x1b765b0 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2152430 = SgIfStmt 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb94c0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2152430 = SgIfStmt 
+*** tempScope = 0x2152430 = SgIfStmt variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+In R612 c_action_data_ref(): (variable built here) numPartRef = 1 
+[trace_back:2328] qualifiedNameList name = p 
+[trace_back:2328] structureScope = 0x1b765b0 = SgBasicBlock name = p 
+*** In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableName = p currentScope = 0x1b765b0 = SgBasicBlock 
+*** Searching in scope = 0x1b765b0 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb9440,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x1b765b0 = SgBasicBlock 
+*** tempScope = 0x1b765b0 = SgBasicBlock variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x2152430 = SgIfStmt 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb94c0,label = Called from SgScopeStatement::print_symboltable size = 0): 
+Internal static data: p_no_name: true p_name =  
+Symbol table has parent = 0x2152430 = SgIfStmt 
+*** tempScope = 0x2152430 = SgIfStmt variableSymbol = (nil) functionSymbol = (nil) classSymbol = (nil) 
+*** Searching in scope = 0x1b76480 = SgBasicBlock 
+In SgScopeStatement::print_symboltable(label = In trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable()): 
+Printing out the data within the symbol table (p_table = 0xcb88e0,label = Called from SgScopeStatement::print_symboltable size = 1): 
+Internal static data: p_no_name: false p_name = p 
+Symbol table has parent = 0x1b76480 = SgBasicBlock 
+Symbol    0: name = p SgSymbol = 0x1dc8020 = SgVariableSymbol type = 0x1c9f170 = SgTypeFloat = SgTypeFloat get_symbol_basis() = 0x1cd6250 = SgInitializedName = initialized_name_p 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+   Symbol's associated mangled name = _module___scope__SRT2___Fb_v_Gb___Fe___L0R__scope____SgSS2____scope__SgFortranDo__scope____SgSS3____scope__p 
+*** tempScope = 0x1b76480 = SgBasicBlock variableSymbol = 0x1dc8020 functionSymbol = (nil) classSymbol = (nil) 
+*** Leaving trace_back_through_parent_scopes_lookup_variable_symbol_but_do_not_build_variable(): variableSymbol = 0x1dc8020 functionSymbol = (nil) 
+[findStructureScope] type SgTypeFloat scope 0x1b765b0 scope name  .
+[findStructureScope] Leaving.
+[trace_back:2328] scope (nil) iter 0 var 0x1dc8020
+After trace_back_through_parent_scopes_lookup_variable_symbol(p,astScopeStack) variableSymbol = 0x1dc8020 = p_symbol_ 
+variableSymbolList.size() = 1
+Found a previously defined variableSymbol = 0x1dc8020 variable = p 
+stackHoldsAnIndexExpression = false 
+astExpressionStack.front() = SgVarRefExp 
+In setSourcePosition locatedNode = 0x1fbc240 = SgVarRefExp token = 0xa4b890 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x1fbc240 = SgVarRefExp) line = 20 column = 29 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+Pushing variable = 0x1fbc240 = SgVarRefExp onto the expression stack 
+In (unknown rule) c_action_designator_or_func_ref() 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_signed_operand(): addOp = (nil) = NULL 
+In c_action_add_op(): addKeyword = + 
+In c_action_int_literal_constant(): digitString = 0xa4c600 = 2 kindParam = (nil) 
+In setSourcePosition locatedNode = 0x1f7d940 = SgIntVal token = 0xa4c600 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x1f7d940 = SgIntVal) line = 20 column = 33 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_primary() 
+In c_action_level_1_expr(): definedUnaryOp = (nil) = NULL 
+In c_action_power_operand(): hasPowerOperand = false 
+In c_action_mult_operand(): numMultOps = 0 
+In c_action_add_operand__add_op():addOp->text = + 
+In setSourcePosition locatedNode = 0x20ecb80 = SgAddOp token = 0xa4c6b0 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x20ecb80 = SgAddOp) line = 20 column = 31 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In setOperatorSourcePosition(SgExpression 0x20ecb80 = SgAddOp) line = 20 column = 31 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In c_action_add_operand(): numAddOps = 1 
+In c_action_level_2_expr(): numConcatOps = 0 
+In c_action_level_3_expr(): relOp = (nil) = NULL 
+In c_action_and_operand(): hasNotOp = false numAndOps = 0 
+In c_action_or_operand(): numOrOps = 0 
+In c_action_equiv_operand(): numEquivOps = 0 
+In c_action_level_5_expr(): numDefinedBinaryOps = 0 
+In R722 c_action_expr() 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 20 col 35
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 3 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 8 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               (SgGreaterThanOp : SgGreaterThanOp_undef_name)( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)(SgVarRefExp : var_ref_of_p)    ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             (SgAddOp : SgAddOp_undef_name)  ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76480)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgIfStmt : 0x2152430)                    ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b765b0)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_assignment_stmt(): label = (nil) = NULL 
+astLabelSymbolStack.empty() == true, no label on stack for statement = 0x2123680 = SgExprStatement 
+Pushing this expressionStatement onto the astNodeStack for optional use by where statement 
+In c_action_action_stmt(): astNodeStack = 1 
+Clearing the astNodeStack of IR nodes that were pushed so that a possible where statement could use them 
+In R807 c_action_if_stmt() label = (nil) = NULL 
+
+
+In outputState (At TOP of R807 c_action_if_stmt()): maxStackSize = 8 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               (SgGreaterThanOp : SgGreaterThanOp_undef_name)( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76480)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgIfStmt : 0x2152430)                    ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b765b0)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In setSourcePosition locatedNode = 0x21236e0 = SgExprStatement token = 0xa4c5e0 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x21236e0 = SgExprStatement) line = 20 column = 14 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In setSourcePosition locatedNode = 0x2152430 = SgIfStmt token = 0xa4c5e0 (file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90) line = 20 
+In setSourcePosition(SgInitializedName 0x2152430 = SgIfStmt) line = 20 column = 14 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x1b765b0 = SgBasicBlock get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1b765b0 = SgBasicBlock get_endOfConstruct()->get_line()   = 0 
+[670] targetLocatedNode = 0x2152430 = SgIfStmt get_startOfConstruct()->get_line() = 20 
+[670] targetLocatedNode = 0x2152430 = SgIfStmt get_endOfConstruct()->get_line()   = 20 
+
+
+In outputState (At BOTTOM of R807 c_action_if_stmt()): maxStackSize = 6 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76480)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_action_stmt(): astNodeStack = 0 
+In c_action_executable_construct(): astExpressionStack = 0 astNodeStack = 0 
+In c_action_block() (popping the current scope from a case statement) 
+[670] targetLocatedNode = 0x1b76480 = SgBasicBlock get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1b76480 = SgBasicBlock get_endOfConstruct()->get_line()   = 0 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 22 col 14
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 5 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In R834 c_action_end_do_stmt() (popping the scope) 
+   label      = (nil) = NULL 
+   endKeyword = 0xa4b7f0 = end 
+   doKeyword  = 0xa4c770 = do 
+   id         = (nil) = NULL 
+   eos        = 0xa4c7b0 = "
+" 
+End of token output! 
+
+
+In outputState (At TOP of R834 c_action_end_do_stmt()): maxStackSize = 5 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFortranDo : 0x204c880)                 ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+[1] Resetting the end of the target statement = SgFortranDo to line = 22 
+[670] targetLocatedNode = 0x204c880 = SgFortranDo get_startOfConstruct()->get_line() = 12 
+[670] targetLocatedNode = 0x204c880 = SgFortranDo get_endOfConstruct()->get_line()   = 12 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgFortranDo to line = 22 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x204c880 = SgFortranDo get_startOfConstruct()->get_line() = 12 
+[670] targetLocatedNode = 0x204c880 = SgFortranDo get_endOfConstruct()->get_line()   = 22 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgBasicBlock to line = 22 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x1b76350 = SgBasicBlock get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1b76350 = SgBasicBlock get_endOfConstruct()->get_line()   = 0 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgFunctionDefinition to line = 22 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_endOfConstruct()->get_line()   = 0 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgClassDefinition to line = 22 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_endOfConstruct()->get_line()   = 0 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgGlobal to line = 22 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_startOfConstruct()->get_line() = 1 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_endOfConstruct()->get_line()   = 1 
+
+
+In outputState (At BOTTOM of R834 c_action_end_do_stmt()): maxStackSize = 4 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_end_do() 
+
+
+In outputState (At TOP of R833 c_action_end_do()): maxStackSize = 4 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_executable_construct(): astExpressionStack = 0 astNodeStack = 0 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 24 col 24
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 4 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgFunctionDefinition : SRT2)             ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgBasicBlock : 0x1b76350)                ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In R1234 c_action_end_subroutine_stmt(): label = (nil) = NULL keyword1 = 0xa4c810 = End keyword2 = 0xa4c850 = Subroutine name = 0xa4c890 = SRT2 
+[1] Resetting the end of the target statement = SgBasicBlock to line = 24 
+[670] targetLocatedNode = 0x1b76350 = SgBasicBlock get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1b76350 = SgBasicBlock get_endOfConstruct()->get_line()   = 22 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgBasicBlock to line = 24 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x1b76350 = SgBasicBlock get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1b76350 = SgBasicBlock get_endOfConstruct()->get_line()   = 24 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgFunctionDefinition to line = 24 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_endOfConstruct()->get_line()   = 22 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgClassDefinition to line = 24 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_endOfConstruct()->get_line()   = 22 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgGlobal to line = 24 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_startOfConstruct()->get_line() = 1 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_endOfConstruct()->get_line()   = 22 
+[1] Resetting the end of the target statement = SgFunctionDefinition to line = 24 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_endOfConstruct()->get_line()   = 24 
+[2] In resetEndingSourcePosition(): Set the ending position of the related function declaration .
+[1] Resetting the end of the target statement = SgProcedureHeaderStatement to line = 24 
+[670] targetLocatedNode = 0x2aaac86e1010 = SgProcedureHeaderStatement get_startOfConstruct()->get_line() = 7 
+[670] targetLocatedNode = 0x2aaac86e1010 = SgProcedureHeaderStatement get_endOfConstruct()->get_line()   = 7 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgFunctionDefinition to line = 24 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x1c0aa60 = SgFunctionDefinition get_endOfConstruct()->get_line()   = 24 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgClassDefinition to line = 24 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_endOfConstruct()->get_line()   = 24 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgGlobal to line = 24 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_startOfConstruct()->get_line() = 1 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_endOfConstruct()->get_line()   = 24 
+In c_action_module_subprogram(): hasPrefix = false 
+In c_action_module_subprogram_part(): count = 1 
+^^^^^^^^^^^^^^^^^^^^^^^^^^ c_action_end_of_stmt: line 28 col 22
+In c_action_end_of_stmt() astNodeStack size = 0 astExpressionStack size = 0 
+
+
+In outputState (At TOP of R1238 c_action_end_of_stmt()): maxStackSize = 2 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_end_module_stmt(): id = 0xa4c990 = ModTestCont 
+
+
+In outputState (At TOP of R1106 c_action_end_module_stmt()): maxStackSize = 2 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+(SgClassDefinition : _fortran_module_stmt_0x2aaac8542010)( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+Creating a module file modtestcont using module name = ModTestCont 
+[1] Resetting the end of the target statement = SgClassDefinition to line = 28 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_endOfConstruct()->get_line()   = 24 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgClassDefinition to line = 28 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_startOfConstruct()->get_line() = 0 
+[670] targetLocatedNode = 0x170d450 = SgClassDefinition get_endOfConstruct()->get_line()   = 28 
+[3] In resetEndingSourcePosition(): Resetting the end of the block = SgGlobal to line = 28 and file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_startOfConstruct()->get_line() = 1 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_endOfConstruct()->get_line()   = 24 
+In c_action_module() 
+In c_action_end_of_file(): filenameString = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_startOfConstruct()->get_line() = 1 
+[670] targetLocatedNode = 0x2aaab50c6120 = SgGlobal get_endOfConstruct()->get_line()   = 28 
+
+
+In outputState (At BOTTOM of c_action_end_of_file()): maxStackSize = 1 
+(astScopeStack)                           (astExpressionStack)            (astNodeStack)                  (astNameStack)                  (astBaseTypeStack)              (astTypeStack)                  (astIntentSpecStack)            (astAttributeSpecStack)(astTypeKindStack)    (astTypeParameterStack)(astLabelSymbolStack) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(SgGlobal : 0x2aaab50c6120)               ( No Expression )               ( No Node )                     ( No Token )                    ( No Type )                     ( No Type )                     ( No IntentSpec )               ( No AttributeSpec )  ( No Expression )     ( No Expression )     ( No Symbol )         
+
+
+In c_action_cleanUp() 
+JVM processing done.
+
+DONE: Calling the openFortranParser_main() function (which loads the JVM) 
+DONE: frontend called (frontendErrorLevel = 0) 
+Generating a Fortran 90 module file (*.rmod) 
+In generateModFile(): Generating a Fortran 90 specific module (*.rmod file) for file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+In generateModFile() (loop over module declarations): Generating a Fortran 90 specific module file modtestcont.rmod for module = ModTestCont.rmod 
+DONE: Generating a Fortran 90 module file (*.rmod) 
+Testing: map of filenames to SgFile IR nodes: filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 is mapped to SgFile = 0x2aaab51a9010 
+AstPostProcessing(): found a node with globalMangledNameMap size not equal to 0: SgNode = SgProject =_project_ SgNode::get_globalMangledNameMap().size() != 0 size = 2 (clearing mangled name cache) 
+/* AST Postprocessing started. */
+/* AST Postprocessing reset parent pointers */
+Note: On SgInitializedName node expected parent (SgFunctionParameterList) didn't match recorded parent (SgVariableDeclaration) 
+/* AST Postprocessing reset parent pointers (done) */
+/* AST Fixes fixup initializers */
+/* AST Fixes empty operator nodes */
+/* AST Postprocessing reset template names */
+/* AST Postprocessing reset template names (done) */
+FixupSourcePositionConstructs::visit(): Building a matching endOfConstruct to the available startOfConstruct for locatedNode = 0x2aaab50c6010 = SgGlobal 
+/* AST Postprocessing finished */
+In SgFile::secondaryPassOverSourceFile(): calling attachAllPreprocessingInfo() 
+Inside of AttachPreprocessingInfoTreeTrav::display(Output from collecting comments and CPP directives in source file only) 
+   use_Wave                      = false 
+   processAllIncludeFiles        = false 
+attributeMapForAllFiles: 
+   file id = 0 list pointer = 0xa4dcc0 list size = 7 filename = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+ROSEAttributesList::display (label = Called from AttachPreprocessingInfoTreeTrav::display_static_data()) 
+-----------------------
+Directive Type: FortranStyleComment; Relative position: before; 
+Line:   13; Column:    0; String: !           if(MOD(NP,primes(p))==0) then
+-----------------------
+Directive Type: FortranStyleComment; Relative position: before; 
+Line:   14; Column:    0; String: !              TempFac(i) = INT(primes(p))
+-----------------------
+Directive Type: FortranStyleComment; Relative position: before; 
+Line:   15; Column:    0; String: !              Np = Np / primes(p)
+-----------------------
+Directive Type: FortranStyleComment; Relative position: before; 
+Line:   16; Column:    0; String: !              counter = counter + 1
+-----------------------
+Directive Type: FortranStyleComment; Relative position: before; 
+Line:   17; Column:    0; String: !           else
+-----------------------
+Directive Type: FortranStyleComment; Relative position: before; 
+Line:   18; Column:    0; String:               ! ... next prime number
+-----------------------
+Directive Type: FortranStyleComment; Relative position: inside; 
+Line:   21; Column:    0; String: !           end if
+END: ROSEAttributesList::display (label = Called from AttachPreprocessingInfoTreeTrav::display_static_data()) 
+previousLocatedNodeMap: 
+   id = 0 previous node = 0x1cd6060 = SgInitializedName file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+startIndexMap: 
+   id = 0 starting index = 7 file = /usr/workspace/wsa/bluenet/thiago/tools/build/rose/src-git-fork-thiago/tests/uiuc/continueStmt/ModTestCont_2.f90 
+Processing OpenMP directives 
+Skipping calls to lower OpenMP sageFilePtr->get_openmp() = false 
+In SgFile::callFrontEnd(): Done with attachAllPreprocessingInfo() 
+In parse(): SgTokenPtrList token_list: token_list.size() = 0 
+C++ source(s) parsed. AST generated.
+At TOP of AstTests::runAllTests() 
+Symbol Table Statistics: sourceFile = 0 maxCollisions = 1 
+Symbol Table Statistics: sourceFile = 0 load_factor = 0.031250 
+Symbol Table Statistics: sourceFile = 0 max_load_factor = 1.000000 
+
+AST initial correctness test ... 
+AST Diagnostics: Fequency of IR nodes missing ending source postion info: 
+PASSED: All IR nodes have both starting and ending position information 
+succeeded.
+
+Redundent Statement Test started (tests only single scopes for redundent statements).
+Redundent Statement Test finished.
+Mangled Name Test on AST started (tests properties of mangled names).
+saved_maxMangledNameSize = 8 average size = 8 
+Mangled Name Test finished: (number of mangled name size = 1) 
+Mangled Name Test finished: (max mangled name size       = 8) 
+Mangled Name Test finished: (total mangled name size     = 8) 
+Compiler Generated Node Test started.
+Compiler Generated Node Test finished.
+Cycle test started.
+Cycle test finished. No cycle found.
+Template Test started.
+Template Test finished.
+Defining and Non-Defining Declaration  Test started.
+Defining and Non-Defining Declaration Test finished.
+Symbol Table Test started.
+Symbol Table Test finished.
+Test return value of get_declaration() member functions started.
+Test return value of get_declaration() member functions finished.
+Test return value of get_type() member functions started.
+Test return value of get_type() member functions finished.
+Test generation of mangled names started.
+saved_maxMangledNameSize = 8 average size = 0 
+saved_maxMangledNameSize = 77 average size = 0 
+saved_maxMangledNameSize = 91 average size = 0 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+saved_maxMangledNameSize = 129 average size = 1 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+saved_maxMangledNameSize = 161 average size = 2 
+WARNING: In mangleQualifiersToString(const SgScopeStatement*): case of scope = 0x204c880 = SgFortranDo not handled (default reached) 
+saved_numberOfMangledNames = 281 
+saved_maxMangledNameSize   = 161 
+saved_totalMangledNameSize = 1126 avarage size = 4.007117 
+Total long mangled name size = 234 for 2 name(s), average is 117.000000
+Test generation of mangled names finished.
+Test parent pointers of IR nodes in memory pool started.
+Test parent pointers of IR nodes in memory pool finished.
+Test parents child pointers of IR nodes in memory pool started.
+Warning: node->get_file_info() is NULL on node = 0x6b92e8 = SgTypeTable 
+Warning: parent->get_file_info() is NULL on node = 0x2aaab4e58010 = SgProject 
+Warning: parent->get_file_info() is NULL on node = 0x2aaab4e58010 = SgProject 
+Test parents child pointers of IR nodes in memory pool finished.
+Test declarations for mapping to declaration associated with symbol(uses memory pool) started.
+Test declarations for mapping to declaration associated with symbol(uses memory pool) finished.
+Test expressions for properly set l-values started.
+Test expressions for properly set l-values finished.
+Test declarations for file consistancy (tests outlining in a separate file) started.
+Test declarations for file consistancy finished.
+Test typedef types for cycles.
+Calling NodeQuery::generateListOfTypes(SgProject) ... 
+AST Type Test: typeList.size() = 7 
+Type Test Started 
+Type Test finished. 
+Test source position information started.
+Test source position information finished.
+Test restrict keyword information started.
+Test restrict keyword information finished.
+At BOTTOM of AstTests::runAllTests() 
+Warning: The traverseInputFiles() iteration over the file list prevents the evaluation of inherited and synthesized attributes on the SgProject IR node! 
+****************************************************************************************************************
+AST Traversal Statistics (traversed in current file) : (total in AST) : (percent of total traversed in current file)
+****************************************************************************************************************
+AST Traversal Statistics:     2:     2: 100.0% SgAddOp
+AST Traversal Statistics:     3:     3: 100.0% SgAssignOp
+AST Traversal Statistics:     4:     4: 100.0% SgBasicBlock
+AST Traversal Statistics:     1:     1: 100.0% SgClassDefinition
+AST Traversal Statistics:     1:     1: 100.0% SgContainsStatement
+AST Traversal Statistics:     3:     3: 100.0% SgExprStatement
+AST Traversal Statistics:     0:     1:   0.0% SgFileList
+AST Traversal Statistics:     1:     1: 100.0% SgFortranDo
+AST Traversal Statistics:     1:     1: 100.0% SgFunctionDefinition
+AST Traversal Statistics:     1:     1: 100.0% SgFunctionParameterList
+AST Traversal Statistics:     1:     1: 100.0% SgGlobal
+AST Traversal Statistics:     1:     1: 100.0% SgGreaterThanOp
+AST Traversal Statistics:     1:     1: 100.0% SgIfStmt
+AST Traversal Statistics:     4:     4: 100.0% SgInitializedName
+AST Traversal Statistics:     4:     4: 100.0% SgIntVal
+AST Traversal Statistics:     1:     1: 100.0% SgModuleStatement
+AST Traversal Statistics:     1:     1: 100.0% SgNullExpression
+AST Traversal Statistics:     1:     1: 100.0% SgProcedureHeaderStatement
+AST Traversal Statistics:     0:     1:   0.0% SgProject
+AST Traversal Statistics:     1:     1: 100.0% SgSourceFile
+AST Traversal Statistics:     7:     7: 100.0% SgVarRefExp
+AST Traversal Statistics:     2:     2: 100.0% SgVariableDeclaration
+AST Traversal Statistics:    41:    43:  95.3% TOTAL
+**************************************************************************************************************** 
+Total memory used = 39968 
+numberOfNodes = 281 
+AST Memory Pool Statistics: numberOfNodes =        22 memory consumption =       3872 bytes ( 9.688 percent of total) sizeof() =  176 node = SgSymbolTable 
+AST Memory Pool Statistics: numberOfNodes =         4 memory consumption =        160 bytes ( 0.400 percent of total) sizeof() =   40 node = SgStorageModifier 
+AST Memory Pool Statistics: numberOfNodes =       164 memory consumption =      14432 bytes (36.109 percent of total) sizeof() =   88 node = Sg_File_Info 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        656 bytes ( 1.641 percent of total) sizeof() =  656 node = SgSourceFile 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =         64 bytes ( 0.160 percent of total) sizeof() =   64 node = SgFileList 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =         56 bytes ( 0.140 percent of total) sizeof() =   56 node = SgDirectoryList 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =       1184 bytes ( 2.962 percent of total) sizeof() = 1184 node = SgProject 
+AST Memory Pool Statistics: numberOfNodes =         7 memory consumption =        392 bytes ( 0.981 percent of total) sizeof() =   56 node = SgTypedefSeq 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =         56 bytes ( 0.140 percent of total) sizeof() =   56 node = SgFunctionParameterTypeList 
+AST Memory Pool Statistics: numberOfNodes =        11 memory consumption =        440 bytes ( 1.101 percent of total) sizeof() =   40 node = SgTypeTable 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        120 bytes ( 0.300 percent of total) sizeof() =  120 node = SgTypeInt 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        112 bytes ( 0.280 percent of total) sizeof() =  112 node = SgTypeVoid 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        112 bytes ( 0.280 percent of total) sizeof() =  112 node = SgTypeFloat 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        112 bytes ( 0.280 percent of total) sizeof() =  112 node = SgTypeBool 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        176 bytes ( 0.440 percent of total) sizeof() =  176 node = SgTypeDefault 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        144 bytes ( 0.360 percent of total) sizeof() =  144 node = SgFunctionType 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        128 bytes ( 0.320 percent of total) sizeof() =  128 node = SgClassType 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        736 bytes ( 1.841 percent of total) sizeof() =  736 node = SgFunctionParameterList 
+AST Memory Pool Statistics: numberOfNodes =         4 memory consumption =       1216 bytes ( 3.042 percent of total) sizeof() =  304 node = SgBasicBlock 
+AST Memory Pool Statistics: numberOfNodes =         2 memory consumption =        544 bytes ( 1.361 percent of total) sizeof() =  272 node = SgGlobal 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        328 bytes ( 0.821 percent of total) sizeof() =  328 node = SgIfStmt 
+AST Memory Pool Statistics: numberOfNodes =         3 memory consumption =       2184 bytes ( 5.464 percent of total) sizeof() =  728 node = SgVariableDefinition 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =         96 bytes ( 0.240 percent of total) sizeof() =   96 node = SgFunctionTypeTable 
+AST Memory Pool Statistics: numberOfNodes =         3 memory consumption =        288 bytes ( 0.721 percent of total) sizeof() =   96 node = SgExprStatement 
+AST Memory Pool Statistics: numberOfNodes =         3 memory consumption =       2544 bytes ( 6.365 percent of total) sizeof() =  848 node = SgVariableDeclaration 
+Case not handled (must be added to src/midend/astDiagnostics/AstStatistics.C): SgProcedureHeaderStatement 
+Case not handled (must be added to src/midend/astDiagnostics/AstStatistics.C): SgModuleStatement 
+Case not handled (must be added to src/midend/astDiagnostics/AstStatistics.C): SgFortranDo 
+Case not handled (must be added to src/midend/astDiagnostics/AstStatistics.C): SgContainsStatement 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        304 bytes ( 0.761 percent of total) sizeof() =  304 node = SgClassDefinition 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        304 bytes ( 0.761 percent of total) sizeof() =  304 node = SgFunctionDefinition 
+AST Memory Pool Statistics: numberOfNodes =         7 memory consumption =        728 bytes ( 1.821 percent of total) sizeof() =  104 node = SgVarRefExp 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        112 bytes ( 0.280 percent of total) sizeof() =  112 node = SgGreaterThanOp 
+AST Memory Pool Statistics: numberOfNodes =         2 memory consumption =        224 bytes ( 0.560 percent of total) sizeof() =  112 node = SgAddOp 
+AST Memory Pool Statistics: numberOfNodes =         3 memory consumption =        336 bytes ( 0.841 percent of total) sizeof() =  112 node = SgAssignOp 
+AST Memory Pool Statistics: numberOfNodes =         4 memory consumption =        512 bytes ( 1.281 percent of total) sizeof() =  128 node = SgIntVal 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =         80 bytes ( 0.200 percent of total) sizeof() =   80 node = SgNullExpression 
+AST Memory Pool Statistics: numberOfNodes =         4 memory consumption =        192 bytes ( 0.480 percent of total) sizeof() =   48 node = SgVariableSymbol 
+AST Memory Pool Statistics: numberOfNodes =         7 memory consumption =        784 bytes ( 1.962 percent of total) sizeof() =  112 node = SgFunctionTypeSymbol 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =         48 bytes ( 0.120 percent of total) sizeof() =   48 node = SgClassSymbol 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =         48 bytes ( 0.120 percent of total) sizeof() =   48 node = SgFunctionSymbol 
+AST Memory Pool Statistics: numberOfNodes =         1 memory consumption =        144 bytes ( 0.360 percent of total) sizeof() =  144 node = SgAliasSymbol 
+AST Memory Pool Statistics: numberOfNodes =         4 memory consumption =       1984 bytes ( 4.964 percent of total) sizeof() =  496 node = SgInitializedName 
+
+
+In stripRoseCommandLineOptions (TOP): List ALL arguments: argc = 6 
+     argv[0] = /usr/workspace/wsa/bluenet/thiago/tools/rose-install-fork%gcc@5.3.0/bin/testFrontEnd 
+     argv[1] = -rose:verbose 
+     argv[2] = 3 
+     argv[3] = ModTestCont_2.f90 
+     argv[4] = -c 
+     argv[5] = -rose:skip_translation_from_edg_ast_to_rose_ast 
+[INFO] Stripping ROSE Fortran OFP commandline options
+[INFO] Stripping ROSE Java ECJ commandline options
+In stripRoseCommandLineOptions (BOTTOM): List ALL arguments: argc = 3 
+     argv[0] = /usr/workspace/wsa/bluenet/thiago/tools/rose-install-fork%gcc@5.3.0/bin/testFrontEnd 
+     argv[1] = ModTestCont_2.f90 
+     argv[2] = -c 
+numberOfFiles() = 1 commandLineToGenerateObjectFile = 
+     gfortran -DUSE_ROSE  ModTestCont_2.f90 -c 
+Note: No Compilation Performance File specified for output of performance data (use -rose:compilationPerformanceFile <filename>) 
