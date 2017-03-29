@@ -6123,7 +6123,7 @@ generateQualifiedName(const std::vector<MultipartReferenceType> & qualifiedNameL
 void
 fixup_forward_type_declarations()
    {
-#if 0
+#if 1
      printf ("Inside of fixup_forward_type_declarations() \n");
 #endif
      SgScopeStatement* currentScope = astScopeStack.front();
@@ -6154,10 +6154,28 @@ fixup_forward_type_declarations()
                if (parentType->containsInternalTypes() == true)
                   {
                     string nameOfIntendedType = defaultType->get_name();
-#if 0
+                    SgName sgnameOfIntendedType = defaultType->get_name();
+#if 1
                     printf ("Reset the base type in parentType = %p = %s to nameOfIntendedType = %s \n",parentType,parentType->class_name().c_str(),nameOfIntendedType.c_str());
 #endif
-                    SgSymbol* symbolOfIntendedType = currentScope->lookup_symbol(nameOfIntendedType);
+                    //FIXME Thiago: this have to look to other scopes in the hierachy.
+/*                    SgScopeStatement* tempScope = currentScope;
+                    SgSymbol* classSymbol = NULL;
+
+                    printf ("$$$ Searching in scope = %p = %s \n",tempScope,tempScope->class_name().c_str()); 
+                    while (classSymbol == NULL && tempScope != NULL)
+                    {
+                        classSymbol = tempScope->lookup_class_symbol(sgnameOfIntendedType); 
+
+                        printf ("$$$ tempScope = %p = %s classSymbol = %p scope name = %s \n", 
+                        tempScope,tempScope->class_name().c_str(),classSymbol, tempScope->get_qualified_name().str());
+
+                        tempScope = isSgGlobal(tempScope) ? NULL : tempScope->get_scope(); 
+                    }
+                
+                    printf("$$$ symbol found %s.\n",classSymbol == NULL? "None" : classSymbol->get_name().str() );
+*/                    
+                     SgSymbol* symbolOfIntendedType = currentScope->lookup_symbol(nameOfIntendedType);
 #if 0
                  // DQ (1/30/2011): This is a bug in OFP that is being fixed by Craig.
                     ROSE_ASSERT(symbolOfIntendedType != NULL);
@@ -6183,7 +6201,7 @@ fixup_forward_type_declarations()
                   }
              }
         }
-#if 0
+#if 1
      printf ("Leaving fixup_forward_type_declarations() \n");
 #endif
    }
