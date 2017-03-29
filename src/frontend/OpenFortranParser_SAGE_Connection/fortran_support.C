@@ -6124,7 +6124,10 @@ void
 fixup_forward_type_declarations()
    {
 #if 1
-     printf ("Inside of fixup_forward_type_declarations() \n");
+     if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+     {
+        printf ("Inside of fixup_forward_type_declarations() \n");
+     }
 #endif
      SgScopeStatement* currentScope = astScopeStack.front();
 #if 0
@@ -6156,7 +6159,10 @@ fixup_forward_type_declarations()
                     string nameOfIntendedType = defaultType->get_name();
                     SgName sgnameOfIntendedType = defaultType->get_name();
 #if 1
+     if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+     {
                     printf ("Reset the base type in parentType = %p = %s to nameOfIntendedType = %s \n",parentType,parentType->class_name().c_str(),nameOfIntendedType.c_str());
+      }
 #endif
                     //FIXME Thiago: this have to look to other scopes in the hierachy.
 /*                    SgScopeStatement* tempScope = currentScope;
@@ -6202,7 +6208,10 @@ fixup_forward_type_declarations()
              }
         }
 #if 1
+     if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+     {
      printf ("Leaving fixup_forward_type_declarations() \n");
+     }
 #endif
    }
 
