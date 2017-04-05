@@ -3844,6 +3844,10 @@ isIntrinsicFunctionReturningNonmatchingType( string s)
    {
   // Later we can figure out exactly which intrinsic function return type different from their
   // input types.  Examples include: sign, modulo (I think).
+     if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+     {
+        printf("[fortran_support/isIntrinsicFunctionReturningNonmatchingType] %s .\n", s.c_str());
+     }
      return false;
    }
 
@@ -3857,43 +3861,64 @@ generateIntrinsicFunctionReturnType( string s , SgExprListExp* argumentList )
   // Intrinsic function return types depend on there arguments and also on the
   // specific intrinsic function.  
 
+     if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+     {
+        printf("[fortran_support/generateIntrinsicFunctionReturnType] Entering %s , argumentList == %s .\n", s.c_str(), argumentList == NULL? "null" : "Not null");
+     }
+
      SgType* returnType = NULL;
 
      bool isIntrinsicFunction = matchAgainstIntrinsicFunctionList(s);
      ROSE_ASSERT(isIntrinsicFunction == true);
 
-     if (argumentList != NULL)
-        {
-       // Use the type of the arguments in the argumentList to figure out what type to return.
-          if (isIntrinsicFunctionReturningNonmatchingType(s) == true)
+     // Thiago's fix 04/05/2017. Others functions might need similar care.
+     if (matchingName(s,"present")) {
+         
+        returnType = createType(IntrinsicTypeSpec_LOGICAL);
+
+     } else {    
+         // Old approach before Thiago's fix above.
+         if (argumentList != NULL)
+         {
+             // Use the type of the arguments in the argumentList to figure out what type to return.
+             if (isIntrinsicFunctionReturningNonmatchingType(s) == true)
              {
-            // This may have to be handled on a case by case basis.
+                 // This may have to be handled on a case by case basis.
 
-            // For now, lets just use the implicit type rules, I will fix this later.
-               returnType = generateImplicitType(s);
+                 // For now, lets just use the implicit type rules, I will fix this later.
+                 returnType = generateImplicitType(s);
              }
-            else
+             else
              {
-            // If we have an expression list, then I assum it is non-empty, but check to make sure.
-               ROSE_ASSERT(argumentList->get_expressions().empty() == false);
+                 // If we have an expression list, then I assum it is non-empty, but check to make sure.
+                 ROSE_ASSERT(argumentList->get_expressions().empty() == false);
 
-            // As I recall all the argument types are the same and the return type of the 
-            // implicit function matches the argument type.
-               returnType = argumentList->get_expressions()[0]->get_type();
+                 if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+                 {
+                     printf("[fortran_support/generateIntrinsicFunctionReturnType] argL != Null and isIntrinsicFunction == False .\n");
+                 }
+                 // As I recall all the argument types are the same and the return type of the 
+                 // implicit function matches the argument type.
+                 returnType = argumentList->get_expressions()[0]->get_type();
              }
-        }
-       else
-        {
-       // I can't think of anything else to do but compute the type using the implicit type rules.
-       // If the user changes the implicit type rules then this would be incorrect, so we have to 
-       // have something better eventually.
-          returnType = generateImplicitType(s);
-        }
+         }
+         else
+         {
+             // I can't think of anything else to do but compute the type using the implicit type rules.
+             // If the user changes the implicit type rules then this would be incorrect, so we have to 
+             // have something better eventually.
+             returnType = generateImplicitType(s);
+         }
 
+     }
   // Use the implicit type rules, however that is not likely good enough since 
   // many intrinsic functions have explicitly predefined types.
   // return generateImplicitType(s);
 
+     if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+     {
+        printf("[fortran_support/generateIntrinsicFunctionReturnType] Leaving %s, ret type %s .\n", s.c_str(), returnType->class_name().c_str());
+     }
      ROSE_ASSERT(returnType != NULL);
      return returnType;
    }
@@ -4749,7 +4774,10 @@ generateFunctionRefExp( Token_t* nameToken )
      if (functionSymbol != NULL)
         {
        // Found the function symbol, so build the function ref expression using the existing symbol...
-       // printf ("Found the function symbol, so build the function ref expression using the existing symbol... \n");
+          if ( SgProject::get_verbose() > DEBUG_COMMENT_LEVEL )
+          {
+                    printf ("[fortran_support/generateFunctionRefExp] Found the function symbol, so build the function ref expression using the existing symbol... \n");
+          }
 
           functionRefExp = new SgFunctionRefExp(functionSymbol,NULL);
           setSourcePosition(functionRefExp);

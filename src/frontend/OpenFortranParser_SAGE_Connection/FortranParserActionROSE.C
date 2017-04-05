@@ -7340,6 +7340,16 @@ void c_action_label(Token_t * lbl)
             SgType* variableType = tempSymbol->get_type();
             ROSE_ASSERT(variableType != NULL);
 
+            if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
+            {
+                printf("[FortranParser/action_data_ref] 7345 variable type: %s .\n", variableType->class_name().c_str());
+                if(variableType->variantT() == V_SgFunctionType)
+                 {
+                       SgFunctionType * sgf =isSgFunctionType(const_cast<SgType*>(variableType));
+                       if(sgf) printf("[FortranParser/action_data_ref] 7345 function type: %s .\n", sgf->get_return_type()->class_name().c_str());
+                 }  
+            }
+
             // Rice CAF: handle a possible copointer dereference, but only for a leading variable (not a function)
             if (variableType->variantT() != V_SgFunctionType)
             {
@@ -7456,6 +7466,11 @@ void c_action_label(Token_t * lbl)
                         ROSE_ASSERT(functionType != NULL);
                         SgExpression* functionReference = new SgFunctionRefExp(functionSymbol, functionType);
                         ROSE_ASSERT(functionReference != NULL);
+
+                        if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL)
+                        {
+                            printf("[FortranParser/action_data_ref] switch V_SgFunctionType variable type: %s .\n", variableType->class_name().c_str());
+                        }
 
                         setSourcePosition(functionReference, nameToken);
                         // DQ (12/28/2010): This branch is required for test2007_57.f90 to work.

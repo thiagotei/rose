@@ -541,6 +541,7 @@ outputLogicalOperator(SgExpression* expr)
           SgExpression* rhs = binaryOp->get_rhs_operand();
           SgType* lhs_type = lhs->get_type();
           SgType* rhs_type = rhs->get_type();
+         // printf("[unparseFortran_expressions/outputLogicalOperator] lsh %s type: %s rhs %s type: %s\n", lhs->class_name().c_str(), lhs_type->class_name().c_str(), rhs->class_name().c_str(), rhs_type->class_name().c_str());
           if (isSgTypeBool(lhs_type) != NULL)
              {
                if (isSgTypeBool(rhs_type) == NULL)
