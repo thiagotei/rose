@@ -2,9 +2,10 @@
 
 ROSE_INSTALL=/usr/workspace/wsa/bluenet/thiago/tools/rose-install-fork%gcc\@5.3.0/bin
 ROSE_EXEC = frontend_test
-DOT_GEN = ASTGraphGenerator 
 EXEC = $(ROSE_INSTALL)/$(ROSE_EXEC)
-DOT_EXEC = $(ROSE_INSTALL)/$(DOT_GEN)
+DOT_GEN = ASTGraphGenerator 
+ROSE_OBJ_DIR=/usr/workspace/wsa/bluenet/thiago/tools/build/rose/obj-git-fork%gcc\@5.3.0/tutorial/
+DOT_EXEC = $(ROSE_OBJ_DIR)/$(DOT_GEN)
 EXEC_FLAGS = -c
 INCS= 
 FLAGS= 
