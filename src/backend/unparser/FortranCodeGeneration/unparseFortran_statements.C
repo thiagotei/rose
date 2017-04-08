@@ -3988,12 +3988,16 @@ FortranCodeGeneration_locatedNode::unparseVarDecl(SgStatement* stmt, SgInitializ
                curprint(", POINTER");
              }
 #endif
-       // printf ("variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() = %s \n",variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() ? "true" : "false");
+        if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL){
+                printf ("[unparseFortran_statements/varDecl] variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() = %s \n",variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() ? "true" : "false");
+        }
+
           if (variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() == true)
              {
             // The PUBLIC keyword is only permitted within Modules
                if ( TransformationSupport::getModuleStatement(variableDeclaration) != NULL )
                   {
+                    //printf ("[unparseFortran_statements/varDecl] generating , PUBLIC \n"); 
                     curprint(", PUBLIC");
                   }
                  else
@@ -4002,7 +4006,7 @@ FortranCodeGeneration_locatedNode::unparseVarDecl(SgStatement* stmt, SgInitializ
                     // SgAccessModifier::post_construction_initialization() will set the modifier to e_default, which in turn is equal to e_public
                     // variable declarations should have public access by default.
                     // So I turn off this warning after discussing this issue with Dan
-                   // printf ("Warning: statement marked as public in non-module scope in FortranCodeGeneration_locatedNode::unparseVarDecl(). \n");
+                    //printf ("[unparseFortran_statements/varDecl] Warning: statement marked as public in non-module scope in FortranCodeGeneration_locatedNode::unparseVarDecl(). \n");
                   }
              }
 

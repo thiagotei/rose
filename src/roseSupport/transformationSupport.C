@@ -2649,11 +2649,38 @@ TransformationSupport::getModuleStatement( const SgNode* astNode)
    {
   // DQ (11/24/2007): This function supports the unparsing of the PUBLIC, PRIVATE keywords (only permitted within modules)
   // The name of this function might change to getModuleDeclaration
-     const SgNode* parentNode = astNode;
-     while ( (isSgModuleStatement(parentNode) == NULL) && (parentNode->get_parent() != NULL) )
-        {
-          parentNode = parentNode->get_parent();
+
+  // Thiago Teixeira UIUC (04/07/2017) - This was wrong,  the PUBLIC attribute can only appear in module variables, procedure, derived type, named constant, or nameless group. 
+  // It cannot happen with subroutine variables, for instance, that are inside a module.
+  // I think it should be checked to parent of a parent. The parent is SgClassDefinition, SgDerivedTypeStatement, etc. 
+  // And the parent of them is SgModuleStatemt. Then it could have PUBLIC or PRIVATE.  
+
+     const SgNode* parentNode = NULL;
+
+     if(astNode->get_parent() != NULL) {
+
+        parentNode = astNode->get_parent();
+
+        printf("[TransformationSupport/getModuleDeclaration] ast parent: %s .\n", parentNode->class_name().c_str());
+        
+        // Look for the granpa
+        if(parentNode->get_parent() != NULL) {
+
+            parentNode = parentNode->get_parent();
+
+            printf("[TransformationSupport/getModuleDeclaration] ast grand parent: %s .\n", parentNode->class_name().c_str());
+
+          /*  if(isSgClassStatement(astNode->get_parent()))
+            {
+                    printf("[TransformationSupport/getModuleDeclaration] the parent is module. it is a module variable!\n");
+            } else {
+                    printf("[TransformationSupport/getModuleDeclaration] the parent is NOT module!\n");
+            }
+            */
         }
+     }    
+       
+     printf("[TransformationSupport/getModuleDeclaration] parent checked: %s .\n", parentNode == NULL? "NULL" : parentNode->class_name().c_str());
 
   // Check to see if we made it back to the root (current root is SgProject).
   // It is also OK to stop at a node for which get_parent() returns NULL (SgType and SgSymbol nodes).
