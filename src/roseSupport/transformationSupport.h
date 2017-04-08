@@ -213,6 +213,7 @@ class ROSE_DLL_API TransformationSupport
           static SgFunctionDefinition* getFunctionDefinition( const SgNode* astNode);
           static SgClassDefinition* getClassDefinition( const SgNode* astNode);
           static SgModuleStatement* getModuleStatement( const SgNode* astNode);
+          static SgModuleStatement* isModuleStatement( const SgNode* astNode);
 
        // DQ (7/25/2012): Modified to reflect new template design using different types of template IR nodes.
        // static SgTemplateDeclaration* getTemplateDeclaration( const SgNode* astNode);
