@@ -3908,14 +3908,21 @@ FortranCodeGeneration_locatedNode::unparseVarDecl(SgStatement* stmt, SgInitializ
                curprint(", POINTER");
              }
 #endif
-        if (SgProject::get_verbose() > DEBUG_COMMENT_LEVEL){
-                printf ("[unparseFortran_statements/varDecl] variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() = %s \n",variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() ? "true" : "false");
+        if (SgProject::get_verbose() >= 1){
+                printf ("[unparseFortran_statements/varDecl] variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() = %s variables: ", variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() ? "true" : "false");
+               SgInitializedNamePtrList::iterator i = variableDeclaration->get_variables().begin();
+               while(i != variableDeclaration->get_variables().end())
+               {
+                      printf("%s ",(*i)->get_name().str()); 
+                      i++;
+               }
+               printf("\n");
         }
 
           if (variableDeclaration->get_declarationModifier().get_accessModifier().isPublic() == true)
              {
             // The PUBLIC keyword is only permitted within Modules
-               if ( TransformationSupport::getModuleStatement(variableDeclaration) != NULL )
+               if ( TransformationSupport::isModuleStatement(variableDeclaration) != NULL )
                   {
                     //printf ("[unparseFortran_statements/varDecl] generating , PUBLIC \n"); 
                     curprint(", PUBLIC");
@@ -3934,7 +3941,7 @@ FortranCodeGeneration_locatedNode::unparseVarDecl(SgStatement* stmt, SgInitializ
           if (variableDeclaration->get_declarationModifier().get_accessModifier().isPrivate() == true)
              {
             // The PRIVATE keyword is only permitted within Modules
-               if ( TransformationSupport::getModuleStatement(variableDeclaration) != NULL )
+               if ( TransformationSupport::isModuleStatement(variableDeclaration) != NULL )
                   {
                     curprint(", PRIVATE");
                   }
