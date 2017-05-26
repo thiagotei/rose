@@ -38,8 +38,8 @@
 #endif
 
 	#define build_schedule_map(d,p) isl_interface_build_schedule_map(d,p)
-	#define integer_set_is_empty(s)	isl_set_fast_is_empty(s)
-	#define integer_map_is_empty(m) isl_map_fast_is_empty(m)
+	#define integer_set_is_empty(s)	isl_set_plain_is_empty(s)
+	#define integer_map_is_empty(m) isl_map_plain_is_empty(m)
 	#define build_map_with_order_csts(s,d,l) isl_interface_build_map_with_order_csts(s,d,l)
 	#define integer_map_intersect_domain(m,s) isl_interface_integer_map_intersect_domain(m,s)
 	#define integer_map_intersect_range(m,s) isl_interface_integer_map_intersect_range(m,s)

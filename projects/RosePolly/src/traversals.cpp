@@ -5,7 +5,7 @@ using namespace std;
 #include <rosepoly/RosePollyModel.h>
 #include <rosepoly/traversals.h>
 #include <rosepoly/data.h>
-#include <rosepoly/utilities.h>
+#include <rosepoly/Utilities.h>
 #include <rosepoly/error.h>
 #include <rosepoly/access_pattern.h>
 #include <rosepoly/RosePollyCustom.h>

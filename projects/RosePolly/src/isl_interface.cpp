@@ -63,7 +63,7 @@ void isl_interface_print_integer_set( isl_set * set )
 	isl_printer_free(printer);
 }
 
-int fCst( __isl_take isl_constraint * c, void * user )
+isl_stat fCst( __isl_take isl_constraint * c, void * user )
 {
 	visitor * v = (visitor*)user;
 	if ( isl_constraint_is_equality(c) ) {
@@ -88,23 +88,23 @@ int fCst( __isl_take isl_constraint * c, void * user )
 	} else {
 		isl_constraint_free(c);
 	}
-	return 0;
+	return isl_stat_ok;
 }
 
-int fMap( __isl_take isl_basic_map * bmap, void * user )
+isl_stat fMap( __isl_take isl_basic_map * bmap, void * user )
 {
 	isl_basic_map_foreach_constraint(bmap,fCst,user);
 	isl_basic_map_free(bmap);
 	
-	return 0;
+	return isl_stat_ok;
 }
 
-int f_gather( __isl_take isl_basic_map * bmap, void * user )
+isl_stat f_gather( __isl_take isl_basic_map * bmap, void * user )
 {
 	vector<isl_map*> * total = (vector<isl_map*>*)user;
 	total->push_back(isl_map_from_basic_map(bmap));
 	
-	return 0;
+	return isl_stat_ok;
 }
 
 vector<isl_map*> isl_interface_gather_disjoint_maps( isl_map * map )
@@ -125,11 +125,11 @@ isl_constraint * get_equality_cst( int pos, isl_map * map )
 	return (isl_constraint*)visit_t.user;
 }
 
-int f_basic_map( __isl_take isl_basic_map * bmap, void * user )
+isl_stat f_basic_map( __isl_take isl_basic_map * bmap, void * user )
 {
 	Visitor * V = (Visitor*)user;
 	V->user = (void*)bmap;
-	return 0;
+	return isl_stat_ok;
 }
 
 int f_basic_set( __isl_take isl_basic_set * bSet, void * user )
@@ -167,15 +167,17 @@ simple_matrix * isl_interface_build_matrix( isl_map * map, bool ineq )
 	
 	simple_matrix * matrix = new simple_matrix( rows, cols );
 	
-	isl_int value;
-	isl_int_init(value);
+	//isl_int value;
+	isl_value * value;
+	//isl_int_init(value);
 	for ( int i = 0 ; i < rows ; i++ ) {
 		for ( int j = 0 ; j < cols ; j++ ) {
-			isl_mat_get_element(temp,i,j,&value);
+	//		isl_mat_get_element(temp,i,j,&value);
+			value = isl_mat_get_element(temp,i,j);	
 			matrix->set_entry(i,j,isl_int_get_si(value));
 		}
 	}
-	isl_int_clear(value);
+	//isl_int_clear(value);
 	
 	isl_basic_map_free(bMap);
 	isl_set_free(set);
@@ -206,15 +208,17 @@ simple_matrix * isl_interface_build_matrix( isl_set * set, bool ineq )
 	
 	simple_matrix * matrix = new simple_matrix( rows, cols );
 	
-	isl_int value;
-	isl_int_init(value);
+	//isl_int value;
+	isl_value * value;
+	//isl_int_init(value);
 	for ( int i = 0 ; i < rows ; i++ ) {
 		for ( int j = 0 ; j < cols ; j++ ) {
-			isl_mat_get_element(temp,i,j,&value);
+			//isl_mat_get_element(temp,i,j,&value);
+			value = isl_mat_get_element(temp,i,j);
 			matrix->set_entry(i,j,isl_int_get_si(value));
 		}
 	}
-	isl_int_clear(value);
+	//isl_int_clear(value);
 	
 	isl_basic_set_free(bSet);
 	isl_mat_free(temp); 
