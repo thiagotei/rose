@@ -387,11 +387,13 @@ simple_matrix * isl_interface_matrix_product( const simple_matrix& lhs, const si
 	
 	for ( int i = 0 ; i < result->get_rows() ; i++ ) {
 		for ( int j = 0 ; j < result->get_columns() ; j++ ) {
-			isl_int v;
-			isl_int_init(v);
-			isl_mat_get_element(mat3,i,j,&v);
-			result->set_entry(i,j,isl_int_get_si(v));
-			isl_int_clear(v);
+			//isl_int v;
+			isl_val * v;
+			//isl_int_init(v);
+			//isl_mat_get_element(mat3,i,j,&v);
+			v = isl_mat_get_element_val(mat3,i,j);
+			result->set_entry(i,j,isl_val_sgn(v));
+			//isl_int_clear(v);
 		}
 	}
 	
@@ -416,11 +418,15 @@ simple_matrix * isl_interface_matrix_inverse( const simple_matrix& mat )
 	
 	for ( int i = 0 ; i < result->get_rows() ; i++ ) {
 		for ( int j = 0 ; j < result->get_columns() ; j++ ) {
-			isl_int v;
+			/*isl_int v;
 			isl_int_init(v);
 			isl_mat_get_element(mat2,i,j,&v);
 			result->set_entry(i,j,isl_int_get_si(v));
 			isl_int_clear(v);
+			*/
+			isl_val * v;
+			v = isl_mat_get_element_val(mat2,i,j);
+			result->set_entry(i,j,isl_val_sgn(v));
 		}
 	}
 	

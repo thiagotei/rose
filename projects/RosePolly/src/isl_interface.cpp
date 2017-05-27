@@ -132,11 +132,11 @@ isl_stat f_basic_map( __isl_take isl_basic_map * bmap, void * user )
 	return isl_stat_ok;
 }
 
-int f_basic_set( __isl_take isl_basic_set * bSet, void * user )
+isl_stat f_basic_set( __isl_take isl_basic_set * bSet, void * user )
 {
 	Visitor * V = (Visitor*)user;
 	V->user = (void*)bSet;
-	return 0;
+	return isl_stat_ok;
 }
 
 simple_matrix * isl_interface_build_matrix( isl_map * map, bool ineq )
@@ -168,13 +168,14 @@ simple_matrix * isl_interface_build_matrix( isl_map * map, bool ineq )
 	simple_matrix * matrix = new simple_matrix( rows, cols );
 	
 	//isl_int value;
-	isl_value * value;
+	isl_val * value;
 	//isl_int_init(value);
 	for ( int i = 0 ; i < rows ; i++ ) {
 		for ( int j = 0 ; j < cols ; j++ ) {
 	//		isl_mat_get_element(temp,i,j,&value);
-			value = isl_mat_get_element(temp,i,j);	
-			matrix->set_entry(i,j,isl_int_get_si(value));
+			value = isl_mat_get_element_val(temp,i,j);	
+			//matrix->set_entry(i,j,isl_int_get_si(value));
+			matrix->set_entry(i,j,isl_val_sgn(value));
 		}
 	}
 	//isl_int_clear(value);
@@ -209,13 +210,13 @@ simple_matrix * isl_interface_build_matrix( isl_set * set, bool ineq )
 	simple_matrix * matrix = new simple_matrix( rows, cols );
 	
 	//isl_int value;
-	isl_value * value;
+	isl_val * value;
 	//isl_int_init(value);
 	for ( int i = 0 ; i < rows ; i++ ) {
 		for ( int j = 0 ; j < cols ; j++ ) {
 			//isl_mat_get_element(temp,i,j,&value);
-			value = isl_mat_get_element(temp,i,j);
-			matrix->set_entry(i,j,isl_int_get_si(value));
+			value = isl_mat_get_element_val(temp,i,j);
+			matrix->set_entry(i,j,isl_val_sgn(value));
 		}
 	}
 	//isl_int_clear(value);
@@ -290,49 +291,74 @@ bool isl_interface_order_satisfaction_test( int level, isl_map * map, isl_map * 
 	core_cst = isl_inequality_alloc(isl_local_space_from_space(isl_space_copy(space)));
 	int src_dim = isl_map_dim(map,isl_dim_out);
 	int dest_dim = isl_map_dim(map,isl_dim_in);
-	isl_int value;
-	isl_int coeff;
-	isl_int_init(value);
-	isl_int_init(coeff);
+	//isl_int value;
+	isl_val * value;
+	//isl_int coeff;
+	isl_val * coeff;
+	//isl_int_init(value);
+	//isl_int_init(coeff);
 	for ( int i = 0 ; i < src_dim ; i++ ) {
 		dep_cst = get_equality_cst(src_dim-i-1,map);
 		
-		isl_int mult;
-		isl_int_init(mult);
-		isl_constraint_get_coefficient(src_cst,isl_dim_in,i,&mult);
+		//isl_int mult;
+		isl_val * mult; 
+		//isl_int_init(mult);
+		//isl_constraint_get_coefficient(src_cst,isl_dim_in,i,&mult);
+		mult = isl_constraint_get_coefficient_val(src_cst,isl_dim_in,i);
 		for ( int j = 0 ; j < dest_dim ; j++ ) {
-			isl_constraint_get_coefficient(dep_cst,isl_dim_in,j,&coeff);
-			isl_int_mul(value,mult,coeff);
-			isl_constraint_get_coefficient(core_cst,isl_dim_set,j,&coeff);
-			isl_int_add(value,coeff,value);
-			isl_constraint_set_coefficient(core_cst,isl_dim_set,j,value);
+			//isl_constraint_get_coefficient(dep_cst,isl_dim_in,j,&coeff);
+			coeff = isl_constraint_get_coefficient_val(dep_cst,isl_dim_in,j);
+			//isl_int_mul(value,mult,coeff);
+			value = isl_val_mul(mult, coeff);
+			//isl_constraint_get_coefficient(core_cst,isl_dim_set,j,&coeff);
+			coeff = isl_constraint_get_coefficient_val(core_cst,isl_dim_set,j);
+			//isl_int_add(value,coeff,value);
+			value = isl_val_add(coeff, value);
+			//isl_constraint_set_coefficient(core_cst,isl_dim_set,j,value);
+			isl_constraint_set_coefficient_val(core_cst,isl_dim_set,j,value);
 		}
-		isl_constraint_get_constant(dep_cst,&value);
-		isl_int_mul(value,mult,value);
-		isl_constraint_get_constant(core_cst,&coeff);
-		isl_int_add(value,coeff,value);
-		isl_constraint_set_constant(core_cst,value);
+		//isl_constraint_get_constant(dep_cst,&value);
+		value = isl_constraint_get_constant_val(dep_cst);
+		//isl_int_mul(value,mult,value);
+		value = isl_val_mul(mult,value);
+		//isl_constraint_get_constant(core_cst,&coeff);
+		coeff =	isl_constraint_get_constant_val(core_cst);
+		//isl_int_add(value,coeff,value);
+		value = isl_val_add(coeff, value);
+		//isl_constraint_set_constant(core_cst,value);
+		isl_constraint_set_constant_val(core_cst,value);
 		
 		isl_constraint_free(dep_cst);
-		isl_int_clear(mult);
+		//isl_int_clear(mult);
 	}
 	
-	isl_constraint_get_constant(src_cst,&value);
-	isl_constraint_get_constant(core_cst,&coeff);
-	isl_int_neg(value,value);
-	isl_int_add(value,coeff,value);
-	isl_constraint_set_constant(core_cst,value);
+	//isl_constraint_get_constant(src_cst,&value);
+	value = isl_constraint_get_constant_val(src_cst);
+	//isl_constraint_get_constant(core_cst,&coeff);
+	coeff = isl_constraint_get_constant_val(core_cst);
+	//isl_int_neg(value,value);
+	value = isl_val_neg(value);
+	//isl_int_add(value,coeff,value);
+	value = isl_val_add(coeff, value);
+	//isl_constraint_set_constant(core_cst,value);
+	isl_constraint_set_constant_val(core_cst,value);
 	
 	for ( int i = 0 ; i < dest_dim ; i++ ) {
-		isl_constraint_get_coefficient(dest_cst,isl_dim_in,i,&value);
-		isl_constraint_get_coefficient(core_cst,isl_dim_set,i,&coeff);
-		isl_int_add(value,coeff,value);
-		isl_constraint_set_coefficient(core_cst,isl_dim_set,i,value);
+		//isl_constraint_get_coefficient(dest_cst,isl_dim_in,i,&value);
+		value = isl_constraint_get_coefficient_val(dest_cst,isl_dim_in,i);
+		//isl_constraint_get_coefficient(core_cst,isl_dim_set,i,&coeff);
+		coeff = isl_constraint_get_coefficient_val(core_cst,isl_dim_set,i);
+		//isl_int_add(value,coeff,value);
+		value = isl_val_add(coeff, value);
+		isl_constraint_set_coefficient_val(core_cst,isl_dim_set,i,value);
 	}
-	isl_constraint_get_constant(dest_cst,&value);
-	isl_constraint_get_constant(core_cst,&coeff);
-	isl_int_add(value,coeff,value);
-	isl_constraint_set_constant(core_cst,value);
+	//isl_constraint_get_constant(dest_cst,&value);
+	value = isl_constraint_get_constant_val(dest_cst);
+	//isl_constraint_get_constant(core_cst,&coeff);
+	coeff = isl_constraint_get_constant_val(core_cst);
+	//isl_int_add(value,coeff,value);
+	value = isl_val_add(coeff, value);
+	isl_constraint_set_constant_val(core_cst,value);
 	
 	isl_constraint_free(src_cst);
 	isl_constraint_free(dest_cst);
@@ -341,8 +367,8 @@ bool isl_interface_order_satisfaction_test( int level, isl_map * map, isl_map * 
 	total = isl_set_add_constraint(total,core_cst);
 	total = isl_set_intersect(total,isl_map_domain(isl_map_copy(map)));
 	
-	isl_int_clear(value);
-	isl_int_clear(coeff);
+	//isl_int_clear(value);
+	//isl_int_clear(coeff);
 	
 	if ( isl_set_is_empty(total) ) {
 		isl_set_free(total);
@@ -595,17 +621,21 @@ int isl_interface_integer_map_get_entry( __isl_keep isl_map * map, int i, int j 
 	isl_map_foreach_basic_map(map,fMap,(void*)(&v));
 	isl_constraint * cst = (isl_constraint*)v.user;
 	
-	isl_int value;
-	isl_int_init(value);
+	//isl_int value;
+	isl_val * value;
+	//isl_int_init(value);
 	int n_in = isl_map_dim(map,isl_dim_in);
 	assert(j<=n_in);
-	isl_constraint_get_coefficient(cst,isl_dim_in,j,&value);
+	//isl_constraint_get_coefficient(cst,isl_dim_in,j,&value);
+	value = isl_constraint_get_coefficient_val(cst,isl_dim_in,j);
 	
-	isl_int_neg(value,value);
-	
+	//isl_int_neg(value,value);
+	value = isl_val_neg(value);
+
 	isl_constraint_free(cst);
-	int final = isl_int_get_si(value);
-	isl_int_clear(value);
+	//int final = isl_int_get_si(value);
+	int final = isl_val_sgn(value);
+	//isl_int_clear(value);
 	return final;
 }
 
@@ -885,71 +915,85 @@ isl_map * isl_interface_build_map_with_order_csts( isl_set * src, isl_set * dest
 	return isl_map_read_from_str(ctx,out.str().c_str());
 }
 
-int fCst_lhs( __isl_take isl_constraint * c, void * user )
+isl_stat fCst_lhs( __isl_take isl_constraint * c, void * user )
 {	
 	int inDim = isl_constraint_dim(c,isl_dim_in);
 	visitor * cd = (visitor*)user;
 	if ( isl_constraint_is_equality(c) ) {
 		if ( cd->pos == cd->index ) {
-			isl_int v;
-			isl_int_init(v);
+			//isl_int v;
+			isl_val * v;
+			//isl_int_init(v);
 			for ( int i = 0 ; i < inDim ; i++ ) {
-				isl_constraint_get_coefficient(c,isl_dim_in,i,&v);
-				isl_int_neg(v,v);
-				cd->user = (void*)isl_constraint_set_coefficient((isl_constraint*)cd->user,isl_dim_out,i,v);
+				//isl_constraint_get_coefficient(c,isl_dim_in,i,&v);
+				v = isl_constraint_get_coefficient_val(c,isl_dim_in,i);
+				//isl_int_neg(v,v);
+				v = isl_val_neg(v);
+				//cd->user = (void*)isl_constraint_set_coefficient((isl_constraint*)cd->user,isl_dim_out,i,v);
+				cd->user = (void*)isl_constraint_set_coefficient_val((isl_constraint*)cd->user,isl_dim_out,i,v);
 			}
-			isl_constraint_get_constant(c,&v);
-			isl_int_neg(v,v);
-			cd->user = (void*)isl_constraint_set_constant((isl_constraint*)cd->user,v);
-			isl_int_clear(v);
+			//isl_constraint_get_constant(c,&v);
+			v = isl_constraint_get_constant_val(c);
+			//isl_int_neg(v,v);
+			v = isl_val_neg(v);
+			cd->user = (void*)isl_constraint_set_constant_val((isl_constraint*)cd->user,v);
+			//isl_int_clear(v);
 		}
 		cd->index++;
 	}
 	
 	isl_constraint_free(c);
-	return 0;
+	return isl_stat_ok;
 }
 
-int fCst_rhs( __isl_take isl_constraint * c, void * user )
+isl_stat fCst_rhs( __isl_take isl_constraint * c, void * user )
 {
 	int inDim = isl_constraint_dim(c,isl_dim_in);
 	visitor * cd = (visitor*)user;
 	if ( isl_constraint_is_equality(c) ) { 
 		if ( cd->pos == cd->index ) {
-			isl_int v;
-			isl_int v2;
-			isl_int_init(v);
-			isl_int_init(v2);
+			//isl_int v;
+			isl_val * v;
+			//isl_int v2;
+			isl_val * v2;
+			//isl_int_init(v);
+			//isl_int_init(v2);
 			for ( int i = 0 ; i < inDim ; i++ ) {
-				isl_constraint_get_coefficient(c,isl_dim_in,i,&v);
-				cd->user = (void*)isl_constraint_set_coefficient((isl_constraint*)cd->user,isl_dim_in,i,v);
+				//isl_constraint_get_coefficient(c,isl_dim_in,i,&v);
+				v = isl_constraint_get_coefficient_val(c,isl_dim_in,i);
+				//cd->user = (void*)isl_constraint_set_coefficient((isl_constraint*)cd->user,isl_dim_in,i,v);
+				cd->user = (void*)isl_constraint_set_coefficient_val((isl_constraint*)cd->user,isl_dim_in,i,v);
 			}
-			isl_constraint_get_constant(c,&v);
-			isl_constraint_get_constant((isl_constraint*)cd->user,&v2);
-			isl_int_add(v,v,v2);
-			cd->user = (void*)isl_constraint_set_constant((isl_constraint*)cd->user,v);
-			isl_int_clear(v);
-			isl_int_clear(v2);
+			//isl_constraint_get_constant(c,&v);
+			v = isl_constraint_get_constant_val(c);
+			//isl_constraint_get_constant((isl_constraint*)cd->user,&v2);
+			v2 = isl_constraint_get_constant_val((isl_constraint*)cd->user);
+			//isl_int_add(v,v,v2);
+			v = isl_val_add(v,v2);
+			//cd->user = (void*)isl_constraint_set_constant((isl_constraint*)cd->user,v);
+			cd->user = (void*)isl_constraint_set_constant_val((isl_constraint*)cd->user,v);
+			//isl_int_clear(v);
+			//isl_int_clear(v2);
 		}
 		cd->index++;
 	}
 	
 	isl_constraint_free(c);
-	return 0;
+	return isl_stat_ok;
 }
 
-int fMap_lhs( __isl_take isl_basic_map * bmap, void * user )
+isl_stat fMap_lhs( __isl_take isl_basic_map * bmap, void * user )
 {
 	isl_basic_map_foreach_constraint(bmap,fCst_lhs,user);
 	isl_basic_map_free(bmap);
-	return 0;
+	return isl_stat_ok;
 }
 
-int fMap_rhs( __isl_take isl_basic_map * bmap, void * user )
+isl_stat fMap_rhs( __isl_take isl_basic_map * bmap, void * user )
 {
 	isl_basic_map_foreach_constraint(bmap,fCst_rhs,user);
 	isl_basic_map_free(bmap);
-	return 0;
+	return isl_stat_ok;
 }
 
 isl_map * isl_interface_integer_map_add_conflict_cst( isl_map * map, isl_map * lhs, isl_map * rhs )

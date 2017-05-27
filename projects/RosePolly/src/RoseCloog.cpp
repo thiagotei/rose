@@ -1,6 +1,6 @@
 
 #include <rose.h>
-#include <SageBuilder.h>
+#include <sageBuilder.h>
 
 using namespace std;
 
